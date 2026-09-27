@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>מיכאל שמידט — בית של אמן</title>
+<meta name="description" content="תצוגת עבודה לאתר האמנות של מיכאל שמידט">
+<style>
+:root{
+ --ink:#121212;--paper:#f7f3eb;--paper2:#eee8de;--muted:#6f6a62;--line:#d7cfc3;
+ --water:#2f6f78;--green:#4e6b49;--gold:#b98d4c;
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,"Noto Sans Hebrew",sans-serif}
+a{color:inherit;text-decoration:none}img{display:block;width:100%;height:auto}.wrap{width:min(1240px,92vw);margin:auto}
+header{position:fixed;inset:0 0 auto;z-index:50;color:#fff;background:linear-gradient(#0009,transparent)}
+nav{height:72px;display:flex;align-items:center;justify-content:space-between}.brand{font-size:.9rem;letter-spacing:.07em}.menu{display:flex;gap:26px;font-size:.82rem}
+.hero{min-height:100svh;position:relative;display:flex;align-items:flex-end;overflow:hidden;background:#111}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 55%;filter:saturate(.9) contrast(.98)}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#0000,#0001 42%,#0009)}
+.heroText{position:relative;z-index:2;color:#fff;width:min(650px,50vw);margin-right:auto;padding-bottom:8vh}
+.kicker,.eyebrow{font-size:.69rem;letter-spacing:.19em;color:var(--muted);margin-bottom:13px}.hero .kicker{color:#ddd4c8}
+h1,h2,h3,p{margin-top:0}h1{font-size:clamp(2.8rem,5.4vw,6.25rem);line-height:1.04;font-weight:500;margin-bottom:24px}
+.hero p{max-width:520px;line-height:1.85;color:#eee6da}.cta{display:inline-block;margin-top:22px;padding-bottom:7px;border-bottom:1px solid currentColor;font-size:.9rem}
+section{padding:116px 0;border-bottom:1px solid var(--line)}.title{font-size:clamp(2.05rem,4vw,4.5rem);line-height:1.05;font-weight:500;margin-bottom:18px}.lead{max-width:700px;color:#514c44;line-height:1.95}
+.feature{display:grid;grid-template-columns:1.2fr .8fr;gap:54px;align-items:end;margin-top:44px}.feature img{aspect-ratio:3/2;object-fit:cover}.feature h3{font-size:2rem;font-weight:500}
+.grid3{display:grid;grid-template-columns:1.35fr .82fr .82fr;gap:18px;margin-top:42px}.grid3 img{object-fit:cover}.grid3 .a img{aspect-ratio:4/5}.grid3 .b img,.grid3 .c img{aspect-ratio:4/3}.cap{font-size:.82rem;color:var(--muted);margin-top:9px}
+.moment{background:var(--ink);color:var(--paper)}.momentGrid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}.moment img{aspect-ratio:4/3;object-fit:cover}.quote{font-size:clamp(2.2rem,4vw,4.5rem);line-height:1.14;font-weight:500;margin-bottom:20px}.moment p{color:#cfc6b8;line-height:1.9}
+.finder{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px;align-items:start}.chips{display:flex;flex-wrap:wrap;gap:10px}.chip{padding:12px 17px;border:1px solid #c8c0b5;border-radius:999px;font-size:.85rem;cursor:default;background:#fff0}.chip:hover{background:#fff}
+.paths{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:40px}.path{padding:34px 30px;border-left:1px solid var(--line);transition:.25s}.path:last-child{border-left:0}.path:hover{background:var(--paper2)}.path strong{display:block;font-size:1.52rem;font-weight:500}.path span{display:block;margin-top:8px;color:var(--muted);font-size:.84rem}
+.recognition{display:grid;grid-template-columns:.72fr 1.28fr;gap:70px}.fact{padding:22px 0;border-top:1px solid var(--line)}.fact strong{display:block;font-size:1.13rem;font-weight:500}.fact span{display:block;color:var(--muted);margin-top:6px;font-size:.85rem;line-height:1.6}
+.archive{background:var(--paper2)}.archiveGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:34px}.archiveCard{min-height:190px;border:1px solid #cfc6b9;padding:20px;display:flex;align-items:flex-end;transition:.25s}.archiveCard:hover{background:#fff}.archiveCard strong{font-size:1.3rem;font-weight:500}
+.about,.contact{display:grid;grid-template-columns:.72fr 1.28fr;gap:72px}.about p{font-size:1.12rem;line-height:2;color:#4d4942}.big{font-size:clamp(2.7rem,5vw,5rem);line-height:1.04;font-weight:500}
+.process{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:36px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.step{padding:26px 22px;border-left:1px solid var(--line)}.step:last-child{border-left:0}.num{font-size:.72rem;color:var(--muted);margin-bottom:18px}.step strong{font-weight:500}.step p{font-size:.84rem;color:var(--muted);line-height:1.7;margin:8px 0 0}
+footer{padding:60px 0}.foot{display:flex;justify-content:space-between}.note{font-size:.72rem;color:var(--muted);margin-top:10px}
+.reveal{opacity:0;transform:translateY(16px);transition:.6s}.reveal.show{opacity:1;transform:none}
+@media(max-width:820px){
+ .menu{display:none}nav{height:62px}.hero:after{background:linear-gradient(0deg,#000b,#0001 65%)}.heroText{width:auto;margin:0;padding:0 22px 52px}h1{font-size:11vw}
+ section{padding:76px 0}.feature,.momentGrid,.finder,.recognition,.about,.contact{grid-template-columns:1fr;gap:28px}.grid3,.paths,.archiveGrid,.process{grid-template-columns:1fr}
+ .path,.step{border-left:0;border-bottom:1px solid var(--line)}.archiveCard{min-height:120px}.foot{display:block}
+}
+</style>
+</head>
+<body>
+<header><div class="wrap"><nav><div class="brand">מיכאל שמידט · MICHAEL SHMIDT</div><div class="menu"><a href="#works">עבודות</a><a href="#find">למצוא יצירה</a><a href="#story">אודות</a><a href="#archive">ארכיון</a><a href="#contact">קשר</a></div></nav></div></header>
+<main>
+<section class="hero"><img src="https://static.wixstatic.com/media/646cc5_6ea0eb41950b4c72a0161970d48a8de8~mv2.jpg" alt="אור מעל הגליל — מיכאל שמידט"><div class="wrap"><div class="heroText"><div class="kicker">MICHAEL SHMIDT · ART / PHOTOGRAPHY</div><h1>האמן הוא אלוקים —<br>ואני תפקידי לעצור את הרגע.</h1><p>אני אמן מהגולן. הצילום הוא אחת הדרכים שלי לשמור רגע לפני שהוא נעלם.</p><a class="cta" href="#works">לגלריה ←</a></div></div></section>
+
+<section id="works"><div class="wrap reveal"><div class="eyebrow">SELECTED WORK</div><h2 class="title">יש רגעים שלא צריך להסביר.</h2><p class="lead">פשוט מסתכלים. אם משהו עוצר אתכם לשנייה — כנראה שהיה שווה לעצור אותו.</p><div class="feature"><img src="https://static.wixstatic.com/media/646cc5_77aee53dafce44a79228f628f2214001~mv2.jpg" alt="זרימה נצחית — הבניאס"><div><div class="eyebrow">WATER · WILD · LIGHT</div><h3>זרימה נצחית — הבניאס</h3><p class="lead">מים, אבן ואור. בלי להפוך את הטבע להצגה.</p><a class="cta" href="#">לראות את היצירה ←</a></div></div></div></section>
+
+<section><div class="wrap reveal"><div class="eyebrow">SELECTED LANGUAGE</div><h2 class="title">שקט · פרא · אור</h2><div class="grid3"><div class="a"><img src="https://static.wixstatic.com/media/646cc5_cc7e282b3d6b4d22a645a41418dafbc8~mv2.jpg" alt="אחרי השלג"><div class="cap">שקט — אחרי השלג</div></div><div class="b"><img src="https://static.wixstatic.com/media/646cc5_89146b682a6841cebafd7c15612097b0~mv2.jpg" alt="שקט על החוף"><div class="cap">מרחב — שקט על החוף</div></div><div class="c"><img src="https://static.wixstatic.com/media/646cc5_d760ae6b12e043d583db3d869bfd99b1~mv2.jpg" alt="קציר זהוב"><div class="cap">אדמה — קציר זהוב</div></div></div></div></section>
+
+<section class="moment"><div class="wrap momentGrid reveal"><img src="https://static.wixstatic.com/media/646cc5_6ea0eb41950b4c72a0161970d48a8de8~mv2.jpg" alt="אור מעל הגליל"><div><div class="eyebrow" style="color:#968d80">THE MOMENT</div><div class="quote">העולם ממשיך לזוז.<br>הרגע נשאר.</div><p>האור משתנה, המים זורמים, השלג נמס. אני רק מחפש את השנייה שבה הכול מתחבר.</p></div></div></section>
+
+<section id="find"><div class="wrap finder reveal"><div><div class="eyebrow">FIND YOUR WORK</div><h2 class="title">מחפשים משהו לקיר?</h2><p class="lead">אפשר להתחיל ממקום, מצבע, מאור או פשוט מתחושה.</p></div><div class="chips"><span class="chip">הגולן</span><span class="chip">הכנרת</span><span class="chip">ירושלים</span><span class="chip">מים</span><span class="chip">חורף</span><span class="chip">שדות</span><span class="chip">שחור־לבן</span><span class="chip">לפלנד</span><span class="chip">אור</span><span class="chip">שקט</span><span class="chip">פרא</span></div></div></section>
+
+<section><div class="wrap reveal"><div class="eyebrow">THREE WAYS IN</div><h2 class="title">מה בא לכם לראות?</h2><div class="paths"><a class="path" href="#works"><strong>לראות</strong><span>גלריות, סדרות והארכיון.</span></a><a class="path" href="#story"><strong>להכיר</strong><span>את האדם, הדרך והיצירה.</span></a><a class="path" href="#contact"><strong>לקחת הביתה</strong><span>Fine Art, התאמה לחלל והדפסה.</span></a></div></div></section>
+
+<section><div class="wrap recognition reveal"><div><div class="eyebrow">RECOGNITION</div><h2 class="title">העבודות יצאו מהמסך.</h2></div><div><div class="fact"><strong>תערוכות בינלאומיות</strong><span>עבודות שנבחרו והוצגו דרך GuruShots. באתר יופיעו רק הישגים שמאומתים במקור.</span></div><div class="fact"><strong>ארכיון של שנים</strong><span>מסגרת, GuruShots והקבצים המקוריים מתחברים עכשיו לארכיון חי אחד.</span></div><div class="fact"><strong>Fine Art לחללים</strong><span>בהמשך: התאמה של מידה, חומר ומסגור, עם מסלול פשוט להזמנה.</span></div></div></div></section>
+
+<section id="archive" class="archive"><div class="wrap reveal"><div class="eyebrow">LIVING ARCHIVE</div><h2 class="title">יש כאן הרבה יותר ממה שנכנס לדף הבית.</h2><p class="lead">שנים של מקומות, עונות, אור ודרך. אפשר להיכנס לפי מקום או תחושה — וללכת לאיבוד קצת.</p><div class="archiveGrid"><div class="archiveCard"><strong>הגולן</strong></div><div class="archiveCard"><strong>הכנרת</strong></div><div class="archiveCard"><strong>ירושלים</strong></div><div class="archiveCard"><strong>מסעות</strong></div></div></div></section>
+
+<section><div class="wrap reveal"><div class="eyebrow">FINE ART — FUTURE FLOW</div><h2 class="title">אם זה נשאר איתכם — אפשר לקחת הביתה.</h2><p class="lead">המסלול שאנחנו בונים יהיה פשוט ולא יעמיס: בוחרים, רואים בחלל, מקבלים התאמה, וממשיכים להדפסה.</p><div class="process"><div class="step"><div class="num">01</div><strong>בוחרים יצירה</strong><p>מהגלריה או מהארכיון.</p></div><div class="step"><div class="num">02</div><strong>רואים בחלל</strong><p>מידה, יחס וקיר לפני החלטה.</p></div><div class="step"><div class="num">03</div><strong>סוגרים חומר ומסגור</strong><p>נייר Fine Art, קנבס או מסגור.</p></div><div class="step"><div class="num">04</div><strong>משלוח</strong><p>בהמשך יתחבר ישירות לספק בישראל.</p></div></div></div></section>
+
+<section id="story"><div class="wrap about reveal"><div><div class="eyebrow">ABOUT</div><h2 class="title">אני מיכאל.</h2></div><p>אני אמן מהגולן. שנים הסתכלתי על העולם דרך מצלמה. עם הזמן הבנתי שהצילום הוא לא כל הסיפור — הוא פשוט אחת השפות שלי. אני נמשך לאור, לאדמה, למים, לחורף ולרגעים שאי אפשר לביים. לא מעניין אותי להפוך את הארץ ליפה יותר ממה שהיא. מעניין אותי לתפוס אותה כשהיא פשוט היא.</p></div></section>
+
+<section id="contact"><div class="wrap contact reveal"><div class="big">נדבר?</div><div><p class="lead">אם ראיתם יצירה שנשארה איתכם, רוצים להתאים עבודה לחלל או לדבר על פרויקט — כתבו לי.</p><a class="cta" href="mailto:michael.s7482@gmail.com">לכתוב לי ←</a></div></div></section>
+</main>
+<footer><div class="wrap foot"><div><strong>מיכאל שמידט</strong><div class="note">תצוגת עבודה V4 · לא האתר הסופי</div></div><div class="note">MICHAEL SHMIDT · GOLAN · ISRAEL</div></div></footer>
+<script>const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});document.querySelectorAll('.reveal').forEach(x=>io.observe(x));</script>
+</body></html>
