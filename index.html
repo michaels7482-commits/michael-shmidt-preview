@@ -85,6 +85,21 @@ section{padding:116px 0;border-bottom:1px solid var(--soft)}
 .roomArt{width:min(68%,520px);box-shadow:0 24px 44px #0002;border:10px solid #111}
 .roomArt img{aspect-ratio:3/2;object-fit:cover}
 .roomHint{font-size:.8rem;color:var(--muted);margin-top:12px;text-align:center}
+.liveGallery{background:#f0ebe2}
+.liveGalleryGrid{display:grid;grid-template-columns:.7fr 1.3fr;gap:68px;align-items:start}
+.liveControls{display:flex;flex-direction:column;border-top:1px solid #c9c0b4}
+.liveBtn{appearance:none;border:0;border-bottom:1px solid #c9c0b4;background:transparent;text-align:right;padding:20px 0;font:inherit;cursor:pointer;color:#4e4943;transition:.2s}
+.liveBtn strong{display:block;font-size:1.15rem;font-weight:500;color:#17191b}
+.liveBtn span{display:block;font-size:.8rem;color:var(--muted);margin-top:5px}
+.liveBtn.active{padding-right:14px;border-right:2px solid var(--gold);background:#fff7}
+.liveStage{position:sticky;top:92px;display:grid;grid-template-columns:1.25fr .75fr;gap:12px;min-height:560px}
+.liveStage figure{margin:0;position:relative;overflow:hidden;background:#111}
+.liveStage figure:first-child{grid-row:span 2}
+.liveStage img{width:100%;height:100%;object-fit:cover;transition:opacity .28s ease,transform .45s ease}
+.liveStage figure:hover img{transform:scale(1.015)}
+.liveCaption{position:absolute;inset:auto 12px 12px 12px;color:white;background:#1119;padding:10px 12px;font-size:.75rem;backdrop-filter:blur(5px)}
+.liveMeta{margin-top:14px;font-size:.82rem;color:var(--muted)}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}.reveal{opacity:1!important;transform:none!important;transition:none!important}.liveStage img,.atlasShot img{transition:none!important}}
 .moment{background:var(--ink);color:var(--paper)}
 .momentGrid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
 .moment img{aspect-ratio:4/3;object-fit:cover}
@@ -140,11 +155,12 @@ footer{padding:60px 0}
   .heroText{width:auto;margin:0;padding:0 22px 52px}
   h1{font-size:11vw}
   section{padding:78px 0}
-  .feature,.manifestoGrid,.seasonGrid,.momentGrid,.finder,.artistHouse .houseGrid,.recognition,.progressGrid,.about,.contact,.atlasHead,.roomTeaser{grid-template-columns:1fr;gap:28px}
+  .feature,.manifestoGrid,.seasonGrid,.momentGrid,.finder,.artistHouse .houseGrid,.recognition,.progressGrid,.about,.contact,.atlasHead,.roomTeaser,.liveGalleryGrid{grid-template-columns:1fr;gap:28px}
   .grid3,.worlds,.paths,.process,.progressCards{grid-template-columns:1fr}
   .atlasRail{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px}
   .atlasShot{min-width:78vw;height:58vh!important;scroll-snap-align:center}
   .roomFrame{padding:28px 18px}.roomWall{min-height:270px}.roomArt{width:78%;border-width:7px}
+  .liveStage{position:relative;top:auto;grid-template-columns:1fr 1fr;min-height:auto}.liveStage figure{min-height:260px}.liveStage figure:first-child{grid-column:1/-1;grid-row:auto;min-height:52vh}
   .houseList{grid-template-columns:1fr}
   .houseItem:nth-child(odd),.houseItem:nth-child(even){padding:20px 0;border-left:0}
   .path,.step{border-left:0;border-bottom:1px solid var(--soft)}
@@ -282,6 +298,30 @@ footer{padding:60px 0}
   </div>
 </section>
 
+
+<section class="liveGallery" id="living-gallery">
+  <div class="wrap liveGalleryGrid reveal">
+    <div>
+      <div class="eyebrow">THE LIVING GALLERY</div>
+      <h2 class="title">לא עוד גלריה אחת.</h2>
+      <p class="lead">בוחרים עולם — והקיר משתנה. בלי להעמיס את כל הארכיון בבת אחת.</p>
+      <div class="liveControls" role="tablist" aria-label="בחירת תערוכה">
+        <button class="liveBtn active" data-set="water" role="tab" aria-selected="true"><strong>מים ואור</strong><span>שקט, זרימה והשתקפות</span></button>
+        <button class="liveBtn" data-set="golan" role="tab" aria-selected="false"><strong>נשימה בגולן</strong><span>אדמה, חורף ומרחב</span></button>
+        <button class="liveBtn" data-set="light" role="tab" aria-selected="false"><strong>אור ואדמה</strong><span>שדות, זהב ורגע אחרון של יום</span></button>
+      </div>
+      <div class="liveMeta">תצוגת אב־טיפוס · שליטה ידנית · בלי autoplay</div>
+    </div>
+    <div>
+      <div class="liveStage" aria-live="polite">
+        <figure><img id="lg1" src="https://static.wixstatic.com/media/646cc5_89146b682a6841cebafd7c15612097b0~mv2.jpg" alt="שקט על החוף — מיכאל שמידט"><figcaption class="liveCaption" id="lc1">שקט על החוף</figcaption></figure>
+        <figure><img id="lg2" src="https://static.wixstatic.com/media/646cc5_77aee53dafce44a79228f628f2214001~mv2.jpg" alt="זרימה נצחית — הבניאס — מיכאל שמידט"><figcaption class="liveCaption" id="lc2">זרימה נצחית — הבניאס</figcaption></figure>
+        <figure><img id="lg3" src="https://static.wixstatic.com/media/646cc5_6ea0eb41950b4c72a0161970d48a8de8~mv2.jpg" alt="אור מעל הגליל — מיכאל שמידט"><figcaption class="liveCaption" id="lc3">אור מעל הגליל</figcaption></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="moment" class="moment">
   <div class="wrap momentGrid reveal">
     <img src="https://static.wixstatic.com/media/646cc5_6ea0eb41950b4c72a0161970d48a8de8~mv2.jpg" alt="אור מעל הגליל">
@@ -407,13 +447,36 @@ footer{padding:60px 0}
 
 <footer>
   <div class="wrap foot">
-    <div><strong>מיכאל שמידט</strong><div class="note">תצוגת התקדמות V9 · בית האמן · Atlas of Light · מתעדכנת תוך כדי בנייה · לא האתר הסופי</div></div>
+    <div><strong>מיכאל שמידט</strong><div class="note">תצוגת התקדמות V10 · בית האמן · Atlas of Light · מתעדכנת תוך כדי בנייה · לא האתר הסופי</div></div>
     <div class="note">MICHAEL SHMIDT · GOLAN · ISRAEL</div>
   </div>
 </footer>
 
-<div class="liveBar">תצוגת התקדמות · V9 · בית האמן · Atlas of Light</div>
+<div class="liveBar">תצוגת התקדמות · V10 · בית האמן · Atlas of Light</div>
 <script>
+const gallerySets={
+ water:[
+  ["https://static.wixstatic.com/media/646cc5_89146b682a6841cebafd7c15612097b0~mv2.jpg","שקט על החוף"],
+  ["https://static.wixstatic.com/media/646cc5_77aee53dafce44a79228f628f2214001~mv2.jpg","זרימה נצחית — הבניאס"],
+  ["https://static.wixstatic.com/media/646cc5_6ea0eb41950b4c72a0161970d48a8de8~mv2.jpg","אור מעל הגליל"]
+ ],
+ golan:[
+  ["https://static.wixstatic.com/media/646cc5_cc7e282b3d6b4d22a645a41418dafbc8~mv2.jpg","אחרי השלג"],
+  ["https://static.wixstatic.com/media/646cc5_d760ae6b12e043d583db3d869bfd99b1~mv2.jpg","קציר זהוב"],
+  ["https://static.wixstatic.com/media/646cc5_6ea0eb41950b4c72a0161970d48a8de8~mv2.jpg","אור מעל הגליל"]
+ ],
+ light:[
+  ["https://static.wixstatic.com/media/646cc5_d760ae6b12e043d583db3d869bfd99b1~mv2.jpg","קציר זהוב"],
+  ["https://static.wixstatic.com/media/646cc5_6ea0eb41950b4c72a0161970d48a8de8~mv2.jpg","אור מעל הגליל"],
+  ["https://static.wixstatic.com/media/646cc5_89146b682a6841cebafd7c15612097b0~mv2.jpg","שקט על החוף"]
+ ]
+};
+document.querySelectorAll('.liveBtn').forEach(btn=>btn.addEventListener('click',()=>{
+ document.querySelectorAll('.liveBtn').forEach(b=>{b.classList.remove('active');b.setAttribute('aria-selected','false')});
+ btn.classList.add('active');btn.setAttribute('aria-selected','true');
+ const set=gallerySets[btn.dataset.set];
+ set.forEach((it,i)=>{const img=document.getElementById('lg'+(i+1));const cap=document.getElementById('lc'+(i+1));img.style.opacity='.15';setTimeout(()=>{img.src=it[0];img.alt=it[1]+' — מיכאל שמידט';cap.textContent=it[1];img.style.opacity='1'},130)});
+}));
 const hdr=document.querySelector('header');
 addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>40),{passive:true});
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});
