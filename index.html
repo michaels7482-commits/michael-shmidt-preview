@@ -28,7 +28,7 @@ nav{height:72px;display:flex;align-items:center;justify-content:space-between;ga
 .menu a{opacity:.88}
 .menu a:hover{opacity:1}
 .hero{min-height:100svh;position:relative;display:flex;align-items:flex-end;overflow:hidden;background:#111}
-.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 58%;filter:saturate(.86) contrast(.98)}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 58%;}
 .hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#0000 0%,#0001 42%,#000b 100%)}
 .heroText{position:relative;z-index:2;color:#fff;width:min(690px,54vw);margin-right:auto;padding-bottom:8vh}
 .heroText:before{content:"";display:block;width:58px;height:1px;background:#d7b06a;margin-bottom:20px}
@@ -75,8 +75,8 @@ section{padding:116px 0;border-bottom:1px solid var(--soft)}
 .atlasRail{display:grid;grid-template-columns:repeat(12,1fr);gap:14px;align-items:start}
 .atlasShot{position:relative;overflow:hidden;background:#222}
 .atlasShot:nth-child(1){grid-column:span 5}.atlasShot:nth-child(2){grid-column:span 3}.atlasShot:nth-child(3){grid-column:span 4}.atlasShot:nth-child(4){grid-column:span 4}.atlasShot:nth-child(5){grid-column:span 8}
-.atlasShot img{width:100%;height:auto;object-fit:contain;transition:transform .7s ease,filter .7s ease;filter:saturate(.82)}
-.atlasShot:hover img{transform:scale(1.012);filter:saturate(.98)}
+.atlasShot img{width:100%;height:auto;object-fit:contain;transition:transform .7s ease,filter .7s ease;}
+.atlasShot:hover img{transform:scale(1.012);}
 .atlasTag{position:absolute;inset:auto 12px 12px auto;background:#111b;color:#fff;padding:7px 9px;font-size:.68rem;backdrop-filter:blur(6px)}
 .roomTeaser{display:grid;grid-template-columns:1.15fr .85fr;gap:64px;align-items:center}
 .roomFrame{border:1px solid #c8bfb2;background:#e8e1d7;padding:4vw}
@@ -110,6 +110,30 @@ section{padding:116px 0;border-bottom:1px solid var(--soft)}
 .nativeText strong{display:block;font-weight:500;font-size:1rem}
 .nativeText span{display:block;color:var(--muted);font-size:.78rem;margin-top:4px;line-height:1.55}
 .nativeBadge{display:inline-block;margin-top:8px;font-size:.63rem;letter-spacing:.12em;color:var(--green)}
+
+
+.focusView{position:fixed;inset:0;z-index:120;background:#0d0e0f;display:none;color:#f8f4ec}
+.focusView.open{display:grid;grid-template-columns:minmax(0,1fr) 340px}
+.focusImagePane{position:relative;display:flex;align-items:center;justify-content:center;padding:28px;min-height:100svh;background:#0d0e0f}
+.focusImagePane img{max-width:100%;max-height:calc(100svh - 56px);width:auto;height:auto;object-fit:contain;box-shadow:none}
+.focusPanel{background:#17191b;border-right:1px solid #ffffff18;padding:30px 26px;display:flex;flex-direction:column;justify-content:space-between}
+.focusClose{appearance:none;border:1px solid #ffffff33;background:transparent;color:#fff;border-radius:999px;width:42px;height:42px;font-size:1.25rem;cursor:pointer}
+.focusEyebrow{font-size:.63rem;letter-spacing:.16em;color:#aaa198;margin-top:34px}
+.focusTitle{font-size:2rem;font-weight:500;margin:8px 0 14px}
+.focusMeta{font-size:.86rem;line-height:1.8;color:#cfc6b8}
+.focusActions{display:grid;gap:9px;margin-top:28px}
+.focusAction{appearance:none;border:1px solid #ffffff26;background:#ffffff08;color:#fff;padding:13px 14px;text-align:right;font:inherit;cursor:pointer}
+.focusAction:hover{background:#ffffff12}
+.focusNote{font-size:.72rem;color:#8f8880;line-height:1.65;margin-top:18px}
+.clickableArt{cursor:zoom-in}
+.galleryPrinciple{margin-top:20px;font-size:.82rem;color:var(--muted);max-width:620px;line-height:1.7}
+@media(max-width:940px){
+ .focusView.open{display:block;overflow:auto}
+ .focusImagePane{min-height:auto;padding:18px 12px 8px}
+ .focusImagePane img{max-height:72svh}
+ .focusPanel{border-right:0;border-top:1px solid #ffffff18;padding:22px 20px 32px}
+ .focusClose{position:fixed;top:72px;left:14px;z-index:2;background:#111c}
+}
 
 .moment{background:var(--ink);color:var(--paper)}
 .momentGrid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
@@ -218,7 +242,7 @@ footer{padding:60px 0}
     <h2 class="title">יש רגעים שלא צריך להסביר.</h2>
     <p class="lead">פשוט מסתכלים. אם משהו עוצר אתכם לשנייה — כנראה שהיה שווה לעצור אותו.</p>
     <div class="feature">
-      <img src="https://static.wixstatic.com/media/646cc5_77aee53dafce44a79228f628f2214001~mv2.jpg" alt="זרימה נצחית — הבניאס">
+      <img class="clickableArt" data-title="זרימה נצחית — הבניאס" data-meta="מים · אבן · אור" src="https://static.wixstatic.com/media/646cc5_77aee53dafce44a79228f628f2214001~mv2.jpg" alt="זרימה נצחית — הבניאס">
       <div>
         <div class="eyebrow">WATER · WILD · LIGHT</div>
         <h3>זרימה נצחית — הבניאס</h3>
@@ -234,9 +258,9 @@ footer{padding:60px 0}
     <div class="eyebrow">THE LANGUAGE</div>
     <h2 class="title">שקט · פרא · אור</h2>
     <div class="grid3">
-      <div class="a"><img src="https://static.wixstatic.com/media/646cc5_cc7e282b3d6b4d22a645a41418dafbc8~mv2.jpg" alt="אחרי השלג"><div class="cap">שקט — אחרי השלג</div></div>
-      <div class="b"><img src="https://static.wixstatic.com/media/646cc5_89146b682a6841cebafd7c15612097b0~mv2.jpg" alt="שקט על החוף"><div class="cap">מרחב — שקט על החוף</div></div>
-      <div class="c"><img src="https://static.wixstatic.com/media/646cc5_d760ae6b12e043d583db3d869bfd99b1~mv2.jpg" alt="קציר זהוב"><div class="cap">אדמה — קציר זהוב</div></div>
+      <div class="a"><img class="clickableArt" data-title="אחרי השלג" data-meta="חורף · שקט · מרחב" src="https://static.wixstatic.com/media/646cc5_cc7e282b3d6b4d22a645a41418dafbc8~mv2.jpg" alt="אחרי השלג"><div class="cap">שקט — אחרי השלג</div></div>
+      <div class="b"><img class="clickableArt" data-title="שקט על החוף" data-meta="מים · מרחב · נשימה" src="https://static.wixstatic.com/media/646cc5_89146b682a6841cebafd7c15612097b0~mv2.jpg" alt="שקט על החוף"><div class="cap">מרחב — שקט על החוף</div></div>
+      <div class="c"><img class="clickableArt" data-title="קציר זהוב" data-meta="אדמה · אור · זהב" src="https://static.wixstatic.com/media/646cc5_d760ae6b12e043d583db3d869bfd99b1~mv2.jpg" alt="קציר זהוב"><div class="cap">אדמה — קציר זהוב</div></div>
     </div>
   </div>
 </section>
@@ -497,14 +521,33 @@ footer{padding:60px 0}
 </section>
 </main>
 
+<div class="focusView" id="focusView" aria-hidden="true">
+  <div class="focusImagePane"><img id="focusImg" alt=""></div>
+  <aside class="focusPanel">
+    <div>
+      <button class="focusClose" id="focusClose" aria-label="סגירה">×</button>
+      <div class="focusEyebrow">ARTWORK FOCUS</div>
+      <div class="focusTitle" id="focusTitle"></div>
+      <div class="focusMeta" id="focusMeta"></div>
+      <div class="focusActions">
+        <button class="focusAction" type="button">לראות על הקיר</button>
+        <button class="focusAction" type="button">וריאציות וגימורים</button>
+        <button class="focusAction" type="button">הסיפור של הרגע</button>
+      </div>
+      <div class="focusNote">מצב תצוגה ניסיוני. אין כאן עדיין בחירת מוצר או מחיר — קודם היצירה, אחר כך המכירה.</div>
+    </div>
+    <div class="focusNote">© מיכאל שמידט · תצוגת Web</div>
+  </aside>
+</div>
+
 <footer>
   <div class="wrap foot">
-    <div><strong>מיכאל שמידט</strong><div class="note">תצוגת התקדמות · קפיצת עיצוב: CLEAN SOURCE · מתעדכנת תוך כדי בנייה · לא האתר הסופי</div></div>
+    <div><strong>מיכאל שמידט</strong><div class="note">תצוגת התקדמות · קפיצת עיצוב: ARTWORK FOCUS · מתעדכנת תוך כדי בנייה · לא האתר הסופי</div></div>
     <div class="note">© מיכאל שמידט · כל הזכויות שמורות</div>
   </div>
 </footer>
 
-<div class="liveBar">תצוגת התקדמות · CLEAN SOURCE · בית האמן</div>
+<div class="liveBar">תצוגת התקדמות · ARTWORK FOCUS · בית האמן</div>
 <script>
 const gallerySets={
  water:[
@@ -529,6 +572,21 @@ document.querySelectorAll('.liveBtn').forEach(btn=>btn.addEventListener('click',
  const set=gallerySets[btn.dataset.set];
  set.forEach((it,i)=>{const img=document.getElementById('lg'+(i+1));const cap=document.getElementById('lc'+(i+1));img.style.opacity='.15';setTimeout(()=>{img.src=it[0];img.alt=it[1]+' — מיכאל שמידט';cap.textContent=it[1];img.style.opacity='1'},130)});
 }));
+const focusView=document.getElementById('focusView');
+const focusImg=document.getElementById('focusImg');
+const focusTitle=document.getElementById('focusTitle');
+const focusMeta=document.getElementById('focusMeta');
+const closeFocus=()=>{focusView.classList.remove('open');focusView.setAttribute('aria-hidden','true');document.body.style.overflow=''};
+document.querySelectorAll('.clickableArt').forEach(img=>img.addEventListener('click',()=>{
+ focusImg.src=img.currentSrc||img.src;
+ focusImg.alt=img.alt;
+ focusTitle.textContent=img.dataset.title||img.alt.replace(' — מיכאל שמידט','');
+ focusMeta.textContent=img.dataset.meta||'צילום מאת מיכאל שמידט';
+ focusView.classList.add('open');focusView.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';
+}));
+document.getElementById('focusClose').addEventListener('click',closeFocus);
+focusView.addEventListener('click',e=>{if(e.target===focusView)closeFocus()});
+addEventListener('keydown',e=>{if(e.key==='Escape')closeFocus()});
 const hdr=document.querySelector('header');
 addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>40),{passive:true});
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});
