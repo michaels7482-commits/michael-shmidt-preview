@@ -19,7 +19,8 @@ img{display:block;width:100%;height:auto}
 .wrap{width:min(var(--max),92vw);margin:auto}
 header{position:fixed;inset:0 0 auto;z-index:50;color:#fff;background:linear-gradient(#0009,transparent)}
 nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px}
-.brand{font-size:.88rem;letter-spacing:.06em;white-space:nowrap}
+.brand{font-size:.88rem;letter-spacing:.06em;white-space:nowrap;display:flex;align-items:center;gap:12px}
+.brand:before{content:"MS";display:grid;place-items:center;width:34px;height:34px;border:1px solid #ffffff70;border-radius:50%;font-size:.66rem;letter-spacing:.08em}
 .menu{display:flex;gap:22px;font-size:.8rem;align-items:center}
 .menu a{opacity:.88}
 .menu a:hover{opacity:1}
@@ -27,6 +28,7 @@ nav{height:72px;display:flex;align-items:center;justify-content:space-between;ga
 .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 58%;filter:saturate(.86) contrast(.98)}
 .hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#0000 0%,#0001 42%,#000b 100%)}
 .heroText{position:relative;z-index:2;color:#fff;width:min(690px,54vw);margin-right:auto;padding-bottom:8vh}
+.heroText:before{content:"";display:block;width:58px;height:1px;background:#d7b06a;margin-bottom:20px}
 .eyebrow,.kicker{font-size:.67rem;letter-spacing:.2em;color:var(--muted);margin-bottom:13px}
 .hero .kicker{color:#ddd4c8}
 h1,h2,h3,p{margin-top:0}
@@ -65,6 +67,21 @@ section{padding:116px 0;border-bottom:1px solid var(--soft)}
 .world small{font-size:.67rem;letter-spacing:.16em;color:var(--muted);margin-bottom:8px}
 .world strong{font-size:1.4rem;font-weight:500}
 .world p{font-size:.83rem;line-height:1.65;color:var(--muted);margin:9px 0 0}
+.atlas{background:#121416;color:var(--paper);overflow:hidden}
+.atlasHead{display:grid;grid-template-columns:.75fr 1.25fr;gap:64px;align-items:end;margin-bottom:40px}
+.atlas .lead{color:#c9c2b8}
+.atlasRail{display:grid;grid-template-columns:1.2fr .8fr 1fr .78fr 1.1fr;gap:10px;align-items:end}
+.atlasShot{position:relative;overflow:hidden;background:#222}
+.atlasShot img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease,filter .7s ease;filter:saturate(.82)}
+.atlasShot:hover img{transform:scale(1.025);filter:saturate(.98)}
+.atlasShot:nth-child(1){height:58vh}.atlasShot:nth-child(2){height:40vh}.atlasShot:nth-child(3){height:49vh}.atlasShot:nth-child(4){height:35vh}.atlasShot:nth-child(5){height:53vh}
+.atlasTag{position:absolute;inset:auto 12px 12px auto;background:#111b;color:#fff;padding:7px 9px;font-size:.68rem;backdrop-filter:blur(6px)}
+.roomTeaser{display:grid;grid-template-columns:1.15fr .85fr;gap:64px;align-items:center}
+.roomFrame{border:1px solid #c8bfb2;background:#e8e1d7;padding:4vw}
+.roomWall{background:#f8f5ef;min-height:380px;display:flex;align-items:center;justify-content:center;box-shadow:inset 0 0 0 1px #00000008}
+.roomArt{width:min(68%,520px);box-shadow:0 24px 44px #0002;border:10px solid #111}
+.roomArt img{aspect-ratio:3/2;object-fit:cover}
+.roomHint{font-size:.8rem;color:var(--muted);margin-top:12px;text-align:center}
 .moment{background:var(--ink);color:var(--paper)}
 .momentGrid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
 .moment img{aspect-ratio:4/3;object-fit:cover}
@@ -120,8 +137,11 @@ footer{padding:60px 0}
   .heroText{width:auto;margin:0;padding:0 22px 52px}
   h1{font-size:11vw}
   section{padding:78px 0}
-  .feature,.manifestoGrid,.seasonGrid,.momentGrid,.finder,.artistHouse .houseGrid,.recognition,.progressGrid,.about,.contact{grid-template-columns:1fr;gap:28px}
+  .feature,.manifestoGrid,.seasonGrid,.momentGrid,.finder,.artistHouse .houseGrid,.recognition,.progressGrid,.about,.contact,.atlasHead,.roomTeaser{grid-template-columns:1fr;gap:28px}
   .grid3,.worlds,.paths,.process,.progressCards{grid-template-columns:1fr}
+  .atlasRail{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px}
+  .atlasShot{min-width:78vw;height:58vh!important;scroll-snap-align:center}
+  .roomFrame{padding:28px 18px}.roomWall{min-height:270px}.roomArt{width:78%;border-width:7px}
   .houseList{grid-template-columns:1fr}
   .houseItem:nth-child(odd),.houseItem:nth-child(even){padding:20px 0;border-left:0}
   .path,.step{border-left:0;border-bottom:1px solid var(--soft)}
@@ -218,6 +238,43 @@ footer{padding:60px 0}
     <div class="thumbPair">
       <img src="https://static.wixstatic.com/media/646cc5_89146b682a6841cebafd7c15612097b0~mv2.jpg" alt="שקט על החוף — מיכאל שמידט">
       <img src="https://static.wixstatic.com/media/646cc5_cc7e282b3d6b4d22a645a41418dafbc8~mv2.jpg" alt="אחרי השלג — מיכאל שמידט">
+    </div>
+  </div>
+</section>
+
+
+<section class="atlas">
+  <div class="wrap reveal">
+    <div class="atlasHead">
+      <div>
+        <div class="eyebrow" style="color:#918a80">ATLAS OF LIGHT</div>
+        <h2 class="title">אותה ארץ.<br>אור אחר.</h2>
+      </div>
+      <p class="lead">לא עוד קיר של תמונות. רצף של רגעים — מים, אדמה, חורף ואור — שכל אחד מהם מקבל מרחב לנשום.</p>
+    </div>
+    <div class="atlasRail">
+      <div class="atlasShot"><img src="https://static.wixstatic.com/media/646cc5_89146b682a6841cebafd7c15612097b0~mv2.jpg" alt="שקט על החוף — מיכאל שמידט"><span class="atlasTag">מים</span></div>
+      <div class="atlasShot"><img src="https://static.wixstatic.com/media/646cc5_77aee53dafce44a79228f628f2214001~mv2.jpg" alt="זרימה נצחית — הבניאס — מיכאל שמידט"><span class="atlasTag">זרימה</span></div>
+      <div class="atlasShot"><img src="https://static.wixstatic.com/media/646cc5_d760ae6b12e043d583db3d869bfd99b1~mv2.jpg" alt="קציר זהוב — מיכאל שמידט"><span class="atlasTag">אדמה</span></div>
+      <div class="atlasShot"><img src="https://static.wixstatic.com/media/646cc5_cc7e282b3d6b4d22a645a41418dafbc8~mv2.jpg" alt="אחרי השלג — מיכאל שמידט"><span class="atlasTag">חורף</span></div>
+      <div class="atlasShot"><img src="https://static.wixstatic.com/media/646cc5_6ea0eb41950b4c72a0161970d48a8de8~mv2.jpg" alt="אור מעל הגליל — מיכאל שמידט"><span class="atlasTag">אור</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap roomTeaser reveal">
+    <div class="roomFrame">
+      <div class="roomWall">
+        <div class="roomArt"><img src="https://static.wixstatic.com/media/646cc5_d760ae6b12e043d583db3d869bfd99b1~mv2.jpg" alt="קציר זהוב בחלל — תצוגת המחשה"></div>
+      </div>
+      <div class="roomHint">המחשה בלבד · Room Preview בפיתוח</div>
+    </div>
+    <div>
+      <div class="eyebrow">ON YOUR WALL</div>
+      <h2 class="title">איך זה ירגיש אצלכם בבית?</h2>
+      <p class="lead">קודם היצירה. אחר כך הקיר. בהמשך אפשר יהיה לבחור מידה וחלל, ולראות לפני שמחליטים — בלי להפוך את האתר לחנות צעקנית.</p>
+      <a class="cta" href="#contact">לדבר על יצירה ←</a>
     </div>
   </div>
 </section>
@@ -347,12 +404,12 @@ footer{padding:60px 0}
 
 <footer>
   <div class="wrap foot">
-    <div><strong>מיכאל שמידט</strong><div class="note">תצוגת התקדמות V7 · בית האמן · מתעדכנת תוך כדי בנייה · לא האתר הסופי</div></div>
+    <div><strong>מיכאל שמידט</strong><div class="note">תצוגת התקדמות V8 · בית האמן · Atlas of Light · מתעדכנת תוך כדי בנייה · לא האתר הסופי</div></div>
     <div class="note">MICHAEL SHMIDT · GOLAN · ISRAEL</div>
   </div>
 </footer>
 
-<div class="liveBar">תצוגת התקדמות · V7 · בית האמן</div>
+<div class="liveBar">תצוגת התקדמות · V8 · בית האמן · Atlas of Light</div>
 <script>
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});
 document.querySelectorAll('.reveal').forEach(x=>io.observe(x));
