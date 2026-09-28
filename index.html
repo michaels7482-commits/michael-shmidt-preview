@@ -43,12 +43,11 @@ section{padding:116px 0;border-bottom:1px solid var(--soft)}
 .title{font-size:clamp(2rem,4vw,4.5rem);line-height:1.04;font-weight:500;margin-bottom:18px;letter-spacing:-.018em}
 .lead{max-width:730px;color:#514d47;line-height:1.9;font-size:1.01rem}
 .feature{display:grid;grid-template-columns:1.22fr .78fr;gap:54px;align-items:end;margin-top:44px}
-.feature img{aspect-ratio:3/2;object-fit:cover}
+.feature img{width:100%;height:auto;object-fit:contain;background:#ebe5dc}
 .feature h3{font-size:2rem;font-weight:500;margin-bottom:12px}
 .grid3{display:grid;grid-template-columns:1.35fr .82fr .82fr;gap:18px;margin-top:42px}
-.grid3 img{object-fit:cover}
-.grid3 .a img{aspect-ratio:4/5}
-.grid3 .b img,.grid3 .c img{aspect-ratio:4/3}
+.grid3{align-items:start}
+.grid3 img{width:100%;height:auto;object-fit:contain;background:#ebe5dc}
 .cap{font-size:.82rem;color:var(--muted);margin-top:9px}
 .manifesto{background:var(--basalt);color:var(--paper)}
 .manifestoGrid{display:grid;grid-template-columns:.78fr 1.22fr;gap:72px;align-items:start}
@@ -61,9 +60,9 @@ section{padding:116px 0;border-bottom:1px solid var(--soft)}
 .season b{font-weight:500}
 .season span{color:var(--muted);line-height:1.65;font-size:.88rem}
 .thumbPair{display:grid;grid-template-columns:1.2fr .8fr;gap:14px}
-.thumbPair img{object-fit:cover}
-.thumbPair img:first-child{aspect-ratio:4/5}
-.thumbPair img:last-child{aspect-ratio:4/3;align-self:end}
+.thumbPair{align-items:start}
+.thumbPair img{width:100%;height:auto;object-fit:contain;background:#ebe5dc}
+.thumbPair img:last-child{align-self:start}
 .worlds{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:38px}
 .world{min-height:250px;border:1px solid #cdc4b7;padding:22px;display:flex;flex-direction:column;justify-content:flex-end;transition:.25s;background:#fff5}
 .world:hover{transform:translateY(-3px);background:#fff}
@@ -73,11 +72,11 @@ section{padding:116px 0;border-bottom:1px solid var(--soft)}
 .atlas{background:#121416;color:var(--paper);overflow:hidden}
 .atlasHead{display:grid;grid-template-columns:.75fr 1.25fr;gap:64px;align-items:end;margin-bottom:40px}
 .atlas .lead{color:#c9c2b8}
-.atlasRail{display:grid;grid-template-columns:1.2fr .8fr 1fr .78fr 1.1fr;gap:10px;align-items:end}
+.atlasRail{display:grid;grid-template-columns:repeat(12,1fr);gap:14px;align-items:start}
 .atlasShot{position:relative;overflow:hidden;background:#222}
-.atlasShot img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease,filter .7s ease;filter:saturate(.82)}
-.atlasShot:hover img{transform:scale(1.025);filter:saturate(.98)}
-.atlasShot:nth-child(1){height:58vh}.atlasShot:nth-child(2){height:40vh}.atlasShot:nth-child(3){height:49vh}.atlasShot:nth-child(4){height:35vh}.atlasShot:nth-child(5){height:53vh}
+.atlasShot:nth-child(1){grid-column:span 5}.atlasShot:nth-child(2){grid-column:span 3}.atlasShot:nth-child(3){grid-column:span 4}.atlasShot:nth-child(4){grid-column:span 4}.atlasShot:nth-child(5){grid-column:span 8}
+.atlasShot img{width:100%;height:auto;object-fit:contain;transition:transform .7s ease,filter .7s ease;filter:saturate(.82)}
+.atlasShot:hover img{transform:scale(1.012);filter:saturate(.98)}
 .atlasTag{position:absolute;inset:auto 12px 12px auto;background:#111b;color:#fff;padding:7px 9px;font-size:.68rem;backdrop-filter:blur(6px)}
 .roomTeaser{display:grid;grid-template-columns:1.15fr .85fr;gap:64px;align-items:center}
 .roomFrame{border:1px solid #c8bfb2;background:#e8e1d7;padding:4vw}
@@ -93,13 +92,25 @@ section{padding:116px 0;border-bottom:1px solid var(--soft)}
 .liveBtn span{display:block;font-size:.8rem;color:var(--muted);margin-top:5px}
 .liveBtn.active{padding-right:14px;border-right:2px solid var(--gold);background:#fff7}
 .liveStage{position:sticky;top:92px;display:grid;grid-template-columns:1.25fr .75fr;gap:12px;min-height:560px}
-.liveStage figure{margin:0;position:relative;overflow:hidden;background:#111}
+.liveStage figure{margin:0;position:relative;overflow:hidden;background:#111;display:flex;align-items:center;justify-content:center}
 .liveStage figure:first-child{grid-row:span 2}
-.liveStage img{width:100%;height:100%;object-fit:cover;transition:opacity .28s ease,transform .45s ease}
+.liveStage img{width:100%;height:auto;max-height:72vh;object-fit:contain;transition:opacity .28s ease,transform .45s ease}
 .liveStage figure:hover img{transform:scale(1.015)}
 .liveCaption{position:absolute;inset:auto 12px 12px 12px;color:white;background:#1119;padding:10px 12px;font-size:.75rem;backdrop-filter:blur(5px)}
 .liveMeta{margin-top:14px;font-size:.82rem;color:var(--muted)}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}.reveal{opacity:1!important;transform:none!important;transition:none!important}.liveStage img,.atlasShot img{transition:none!important}}
+
+.originalWorlds{background:#fbf8f2}
+.originalHead{display:grid;grid-template-columns:.72fr 1.28fr;gap:70px;align-items:end;margin-bottom:44px}
+.originalHead .lead{max-width:760px}
+.nativeGallery{columns:3;column-gap:18px}
+.nativeCard{break-inside:avoid;margin:0 0 18px;display:inline-block;width:100%;background:#fff;padding:0 0 14px;border-bottom:1px solid #d8d0c4}
+.nativeCard img{display:block;width:100%;height:auto;object-fit:contain;background:#ede7de}
+.nativeText{padding:12px 4px 0}
+.nativeText strong{display:block;font-weight:500;font-size:1rem}
+.nativeText span{display:block;color:var(--muted);font-size:.78rem;margin-top:4px;line-height:1.55}
+.nativeBadge{display:inline-block;margin-top:8px;font-size:.63rem;letter-spacing:.12em;color:var(--green)}
+
 .moment{background:var(--ink);color:var(--paper)}
 .momentGrid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
 .moment img{aspect-ratio:4/3;object-fit:cover}
@@ -157,10 +168,12 @@ footer{padding:60px 0}
   section{padding:78px 0}
   .feature,.manifestoGrid,.seasonGrid,.momentGrid,.finder,.artistHouse .houseGrid,.recognition,.progressGrid,.about,.contact,.atlasHead,.roomTeaser,.liveGalleryGrid{grid-template-columns:1fr;gap:28px}
   .grid3,.worlds,.paths,.process,.progressCards{grid-template-columns:1fr}
-  .atlasRail{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px}
-  .atlasShot{min-width:78vw;height:58vh!important;scroll-snap-align:center}
+  .atlasRail{display:block}
+  .atlasShot{margin-bottom:14px}
+  .originalHead{grid-template-columns:1fr;gap:24px}
+  .nativeGallery{columns:1}
   .roomFrame{padding:28px 18px}.roomWall{min-height:270px}.roomArt{width:78%;border-width:7px}
-  .liveStage{position:relative;top:auto;grid-template-columns:1fr 1fr;min-height:auto}.liveStage figure{min-height:260px}.liveStage figure:first-child{grid-column:1/-1;grid-row:auto;min-height:52vh}
+  .liveStage{position:relative;top:auto;grid-template-columns:1fr;min-height:auto}.liveStage figure{min-height:0;padding:0}.liveStage figure:first-child{grid-column:1/-1;grid-row:auto}.liveStage img{max-height:none}
   .houseList{grid-template-columns:1fr}
   .houseItem:nth-child(odd),.houseItem:nth-child(even){padding:20px 0;border-left:0}
   .path,.step{border-left:0;border-bottom:1px solid var(--soft)}
@@ -322,6 +335,45 @@ footer{padding:60px 0}
   </div>
 </section>
 
+
+<section class="originalWorlds">
+  <div class="wrap reveal">
+    <div class="originalHead">
+      <div>
+        <div class="eyebrow">ORIGINAL FRAME · NEW WORLDS</div>
+        <h2 class="title">הפריים נשאר שלם.</h2>
+      </div>
+      <p class="lead">מכאן ברירת המחדל היא פשוטה: היצירה מוצגת ביחס שלה. לא חותכים בשביל ריבוע, לא מותחים בשביל גריד. אם בעתיד נרצה חיתוך אמנותי אמיתי — זו תהיה החלטה בפני עצמה.</p>
+    </div>
+    <div class="nativeGallery">
+      <article class="nativeCard">
+        <img src="https://www.misgeret.co.il/wht_Storage/Pics/michael-shmidt/Preview/230658-1385-01-06-14-SC-F01-262x412-90.jpg.webp?ver=0.0.10" alt="היהלום — מיכאל שמידט">
+        <div class="nativeText"><strong>היהלום</strong><span>טבע מקרוב · פרחים וצומח</span><span class="nativeBadge">מקור מאומת</span></div>
+      </article>
+      <article class="nativeCard">
+        <img src="https://www.misgeret.co.il/Pics/michael-shmidt/276383-1385-24-12-15-L.jpg" alt="פרצים — מיכאל שמידט">
+        <div class="nativeText"><strong>פרצים</strong><span>קרני אור · שמיים · נוף</span><span class="nativeBadge">מקור מאומת</span></div>
+      </article>
+      <article class="nativeCard">
+        <img src="https://www.misgeret.co.il/Pics/michael-shmidt/230657-1385-01-06-14-L.jpg.webp" alt="לנשום — מיכאל שמידט">
+        <div class="nativeText"><strong>לנשום</strong><span>פרחים · שקט · טבע</span><span class="nativeBadge">מקור מאומת</span></div>
+      </article>
+      <article class="nativeCard">
+        <img src="https://www.misgeret.co.il/Pics/michael-shmidt/271519-1385-21-11-17-L.jpg" alt="אורות הבריאה — מיכאל שמידט">
+        <div class="nativeText"><strong>אורות הבריאה</strong><span>קרני שמש · כנרת · חורף</span><span class="nativeBadge">מקור מאומת</span></div>
+      </article>
+      <article class="nativeCard">
+        <img src="https://www.misgeret.co.il/Pics/michael-shmidt/274426-1385-22-11-15-L.jpg" alt="תשוקה של סתיו — מיכאל שמידט">
+        <div class="nativeText"><strong>תשוקה של סתיו</strong><span>עלה · צבע · מינימליזם טבעי</span><span class="nativeBadge">מקור מאומת</span></div>
+      </article>
+      <article class="nativeCard">
+        <img src="https://www.misgeret.co.il/Pics/michael-shmidt/275834-1385-14-12-15-L.jpg" alt="בא בימים — מיכאל שמידט">
+        <div class="nativeText"><strong>בא בימים</strong><span>עץ זית · קרני שמש · אדמה</span><span class="nativeBadge">מקור מאומת</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
 <section id="moment" class="moment">
   <div class="wrap momentGrid reveal">
     <img src="https://static.wixstatic.com/media/646cc5_6ea0eb41950b4c72a0161970d48a8de8~mv2.jpg" alt="אור מעל הגליל">
@@ -447,12 +499,12 @@ footer{padding:60px 0}
 
 <footer>
   <div class="wrap foot">
-    <div><strong>מיכאל שמידט</strong><div class="note">תצוגת התקדמות V10 · בית האמן · Atlas of Light · מתעדכנת תוך כדי בנייה · לא האתר הסופי</div></div>
+    <div><strong>מיכאל שמידט</strong><div class="note">תצוגת התקדמות · קפיצת עיצוב: ORIGINAL FRAME · מתעדכנת תוך כדי בנייה · לא האתר הסופי</div></div>
     <div class="note">MICHAEL SHMIDT · GOLAN · ISRAEL</div>
   </div>
 </footer>
 
-<div class="liveBar">תצוגת התקדמות · V10 · בית האמן · Atlas of Light</div>
+<div class="liveBar">תצוגת התקדמות · ORIGINAL FRAME · בית האמן</div>
 <script>
 const gallerySets={
  water:[
