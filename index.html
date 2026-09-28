@@ -13,11 +13,14 @@
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,"Noto Sans Hebrew",sans-serif}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,"Noto Sans Hebrew",sans-serif;font-size:16px;line-height:1.5}
+::selection{background:#d7c7a8;color:#111}
+a:focus-visible,button:focus-visible{outline:2px solid #b58e54;outline-offset:4px}
 a{color:inherit;text-decoration:none}
 img{display:block;width:100%;height:auto}
 .wrap{width:min(var(--max),92vw);margin:auto}
-header{position:fixed;inset:0 0 auto;z-index:50;color:#fff;background:linear-gradient(#0009,transparent)}
+header{position:fixed;inset:0 0 auto;z-index:50;color:#fff;background:linear-gradient(#000a,transparent);transition:.3s}
+header.scrolled{background:#111214e8;backdrop-filter:blur(10px);border-bottom:1px solid #ffffff18}
 nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px}
 .brand{font-size:.88rem;letter-spacing:.06em;white-space:nowrap;display:flex;align-items:center;gap:12px}
 .brand:before{content:"MS";display:grid;place-items:center;width:34px;height:34px;border:1px solid #ffffff70;border-radius:50%;font-size:.66rem;letter-spacing:.08em}
@@ -37,8 +40,8 @@ h2{font-weight:500}
 .hero p{max-width:540px;line-height:1.85;color:#eee7dc;font-size:1.02rem}
 .cta{display:inline-block;margin-top:22px;padding-bottom:7px;border-bottom:1px solid currentColor;font-size:.9rem}
 section{padding:116px 0;border-bottom:1px solid var(--soft)}
-.title{font-size:clamp(2rem,4vw,4.5rem);line-height:1.06;font-weight:500;margin-bottom:18px}
-.lead{max-width:730px;color:#514d47;line-height:1.95}
+.title{font-size:clamp(2rem,4vw,4.5rem);line-height:1.04;font-weight:500;margin-bottom:18px;letter-spacing:-.018em}
+.lead{max-width:730px;color:#514d47;line-height:1.9;font-size:1.01rem}
 .feature{display:grid;grid-template-columns:1.22fr .78fr;gap:54px;align-items:end;margin-top:44px}
 .feature img{aspect-ratio:3/2;object-fit:cover}
 .feature h3{font-size:2rem;font-weight:500;margin-bottom:12px}
@@ -172,9 +175,9 @@ footer{padding:60px 0}
   <img src="https://static.wixstatic.com/media/646cc5_6ea0eb41950b4c72a0161970d48a8de8~mv2.jpg" alt="אור מעל הגליל — מיכאל שמידט">
   <div class="wrap">
     <div class="heroText">
-      <div class="kicker">MICHAEL SHMIDT · ARTIST HOUSE</div>
+      <div class="kicker">MICHAEL SHMIDT · GOLAN · ARTIST HOUSE</div>
       <h1>האמן הוא אלוקים —<br>ואני תפקידי לעצור את הרגע.</h1>
-      <p>אני אמן מהגולן. הצילום הוא אחת הדרכים שלי לשמור רגע לפני שהוא נעלם.</p>
+      <p>אני מיכאל. אמן מהגולן. אני מחפש את הרגע הקטן שבו האור, המקום והזמן מתחברים — ועוצר אותו לפני שהוא נעלם.</p>
       <a class="cta" href="#works">לגלריה ←</a>
     </div>
   </div>
@@ -404,13 +407,15 @@ footer{padding:60px 0}
 
 <footer>
   <div class="wrap foot">
-    <div><strong>מיכאל שמידט</strong><div class="note">תצוגת התקדמות V8 · בית האמן · Atlas of Light · מתעדכנת תוך כדי בנייה · לא האתר הסופי</div></div>
+    <div><strong>מיכאל שמידט</strong><div class="note">תצוגת התקדמות V9 · בית האמן · Atlas of Light · מתעדכנת תוך כדי בנייה · לא האתר הסופי</div></div>
     <div class="note">MICHAEL SHMIDT · GOLAN · ISRAEL</div>
   </div>
 </footer>
 
-<div class="liveBar">תצוגת התקדמות · V8 · בית האמן · Atlas of Light</div>
+<div class="liveBar">תצוגת התקדמות · V9 · בית האמן · Atlas of Light</div>
 <script>
+const hdr=document.querySelector('header');
+addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>40),{passive:true});
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});
 document.querySelectorAll('.reveal').forEach(x=>io.observe(x));
 </script>
