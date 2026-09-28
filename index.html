@@ -7,8 +7,8 @@
 <meta name="description" content="תצוגת התקדמות חיה לבית האמן של מיכאל שמידט — צילום, אמנות, סיפורים, מוזיקה ו-Fine Art.">
 <style>
 :root{
-  --ink:#111214; --basalt:#17191b; --paper:#f7f3eb; --paper2:#eee8de; --soft:#d8d0c4;
-  --muted:#716c65; --green:#52634a; --water:#476e73; --gold:#b58e54;
+  --ink:#111210; --basalt:#181917; --paper:#f6f1e8; --paper2:#ece5da; --soft:#d6cec1;
+  --muted:#746e66; --green:#59664d; --water:#557277; --lichen:#8b8f72; --sun:#b38f5a;
   --max:1280px;
 }
 *{box-sizing:border-box}
@@ -82,15 +82,35 @@ section{padding:116px 0;border-bottom:1px solid var(--soft)}
 .roomFrame{border:1px solid #c8bfb2;background:#e8e1d7;padding:4vw}
 .roomWall{background:#f8f5ef;min-height:380px;display:flex;align-items:center;justify-content:center;box-shadow:inset 0 0 0 1px #00000008}
 .roomArt{width:min(68%,520px);box-shadow:0 24px 44px #0002;border:10px solid #111}
-.roomArt img{aspect-ratio:3/2;object-fit:cover}
+.roomArt img{width:100%;height:auto;object-fit:contain}
 .roomHint{font-size:.8rem;color:var(--muted);margin-top:12px;text-align:center}
+
+.exhibitionStage{background:var(--paper2)}
+.exhibitionShell{border:1px solid #cbc2b5;background:#f8f4ed;padding:18px}
+.exhibitionMood{display:grid;grid-template-columns:1.08fr .92fr;gap:18px;align-items:start;transition:background .35s ease}
+.exhibitionMood[data-mood="water"]{background:linear-gradient(135deg,#e9efed,#f5f1e8)}
+.exhibitionMood[data-mood="golan"]{background:linear-gradient(135deg,#e7e6dc,#f4efe5)}
+.exhibitionMood[data-mood="light"]{background:linear-gradient(135deg,#efe5d5,#f7f2e9)}
+.exhibitionLead{padding:26px 24px 24px}
+.exhibitionLead h3{font-size:clamp(1.8rem,3.1vw,3.4rem);font-weight:500;margin:0 0 12px}
+.exhibitionLead p{color:#5e5952;line-height:1.85;max-width:500px}
+.exhibitionWall{padding:24px;display:grid;gap:16px}
+.exhibitionWall figure{margin:0;background:#fff;padding:10px}
+.exhibitionWall img{width:100%;height:auto;object-fit:contain}
+.exhibitionWall figcaption{font-size:.75rem;color:#777168;margin-top:8px}
+.exhibitionControls{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}
+.exhibitionControl{appearance:none;border:1px solid #bfb6a8;background:transparent;padding:10px 13px;border-radius:999px;font:inherit;font-size:.8rem;cursor:pointer}
+.exhibitionControl.active{background:#1a1b19;color:#f7f2e9;border-color:#1a1b19}
+.exhibitionRule{margin-top:18px;font-size:.74rem;color:#807970;line-height:1.7}
+@media(max-width:940px){.exhibitionMood{grid-template-columns:1fr}.exhibitionLead,.exhibitionWall{padding:18px}}
+
 .liveGallery{background:#f0ebe2}
 .liveGalleryGrid{display:grid;grid-template-columns:.7fr 1.3fr;gap:68px;align-items:start}
 .liveControls{display:flex;flex-direction:column;border-top:1px solid #c9c0b4}
 .liveBtn{appearance:none;border:0;border-bottom:1px solid #c9c0b4;background:transparent;text-align:right;padding:20px 0;font:inherit;cursor:pointer;color:#4e4943;transition:.2s}
 .liveBtn strong{display:block;font-size:1.15rem;font-weight:500;color:#17191b}
 .liveBtn span{display:block;font-size:.8rem;color:var(--muted);margin-top:5px}
-.liveBtn.active{padding-right:14px;border-right:2px solid var(--gold);background:#fff7}
+.liveBtn.active{padding-right:14px;border-right:2px solid var(--sun);background:#fff7}
 .liveStage{position:sticky;top:92px;display:grid;grid-template-columns:1.25fr .75fr;gap:12px;min-height:560px}
 .liveStage figure{margin:0;position:relative;overflow:hidden;background:#111;display:flex;align-items:center;justify-content:center}
 .liveStage figure:first-child{grid-row:span 2}
@@ -157,7 +177,7 @@ section{padding:116px 0;border-bottom:1px solid var(--soft)}
 
 .moment{background:var(--ink);color:var(--paper)}
 .momentGrid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
-.moment img{aspect-ratio:4/3;object-fit:cover}
+.moment img{width:100%;height:auto;object-fit:contain;background:#0f100f}
 .quote{font-size:clamp(2.2rem,4vw,4.6rem);line-height:1.14;font-weight:500;margin-bottom:20px}
 .moment p{color:#cfc6b8;line-height:1.9}
 .finder{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px;align-items:start}
@@ -200,7 +220,6 @@ section{padding:116px 0;border-bottom:1px solid var(--soft)}
 footer{padding:60px 0}
 .foot{display:flex;justify-content:space-between}
 .note{font-size:.72rem;color:var(--muted);margin-top:10px}
-.liveBar{position:fixed;left:18px;bottom:18px;z-index:60;background:#121212e8;color:#f7f3eb;border:1px solid #ffffff24;padding:10px 14px;border-radius:999px;font-size:.72rem;backdrop-filter:blur(8px)}
 .reveal{opacity:0;transform:translateY(16px);transition:.6s}
 .reveal.show{opacity:1;transform:none}
 @media(max-width:940px){
@@ -222,7 +241,6 @@ footer{padding:60px 0}
   .houseItem:nth-child(odd),.houseItem:nth-child(even){padding:20px 0;border-left:0}
   .path,.step{border-left:0;border-bottom:1px solid var(--soft)}
   .foot{display:block}
-  .liveBar{left:10px;bottom:10px;font-size:.66rem}
 }
 </style>
 </head>
@@ -384,36 +402,43 @@ footer{padding:60px 0}
   <div class="wrap reveal">
     <div class="originalHead">
       <div>
-        <div class="eyebrow">ORIGINAL FRAME · NEW WORLDS</div>
-        <h2 class="title">הפריים נשאר שלם.</h2>
+        <div class="eyebrow">CLEAN SOURCE · ORIGINAL FRAME</div>
+        <h2 class="title">התמונה לא מתיישרת לעיצוב.<br>העיצוב מתיישר אליה.</h2>
       </div>
-      <p class="lead">מכאן ברירת המחדל היא פשוטה: היצירה מוצגת ביחס שלה. לא חותכים בשביל ריבוע, לא מותחים בשביל גריד. אם בעתיד נרצה חיתוך אמנותי אמיתי — זו תהיה החלטה בפני עצמה.</p>
+      <p class="lead">בגלריה הראשית כל יצירה נשארת ביחס המקורי שלה. מאקרו, קרני אור, טבע קרוב ומינימליזם נכנסים רק אחרי שיש לנו נגזרת Web נקייה מהמקור — בלי Watermark ישן ובלי חיתוך כפוי.</p>
     </div>
-    <div class="nativeGallery">
-      <article class="nativeCard">
-        <img src="https://www.misgeret.co.il/wht_Storage/Pics/michael-shmidt/Preview/230658-1385-01-06-14-SC-F01-262x412-90.jpg.webp?ver=0.0.10" alt="היהלום — מיכאל שמידט">
-        <div class="nativeText"><strong>היהלום</strong><span>טבע מקרוב · פרחים וצומח</span><span class="nativeBadge">מקור מאומת</span></div>
-      </article>
-      <article class="nativeCard">
-        <img src="https://www.misgeret.co.il/Pics/michael-shmidt/276383-1385-24-12-15-L.jpg" alt="פרצים — מיכאל שמידט">
-        <div class="nativeText"><strong>פרצים</strong><span>קרני אור · שמיים · נוף</span><span class="nativeBadge">מקור מאומת</span></div>
-      </article>
-      <article class="nativeCard">
-        <img src="https://www.misgeret.co.il/Pics/michael-shmidt/230657-1385-01-06-14-L.jpg.webp" alt="לנשום — מיכאל שמידט">
-        <div class="nativeText"><strong>לנשום</strong><span>פרחים · שקט · טבע</span><span class="nativeBadge">מקור מאומת</span></div>
-      </article>
-      <article class="nativeCard">
-        <img src="https://www.misgeret.co.il/Pics/michael-shmidt/271519-1385-21-11-17-L.jpg" alt="אורות הבריאה — מיכאל שמידט">
-        <div class="nativeText"><strong>אורות הבריאה</strong><span>קרני שמש · כנרת · חורף</span><span class="nativeBadge">מקור מאומת</span></div>
-      </article>
-      <article class="nativeCard">
-        <img src="https://www.misgeret.co.il/Pics/michael-shmidt/274426-1385-22-11-15-L.jpg" alt="תשוקה של סתיו — מיכאל שמידט">
-        <div class="nativeText"><strong>תשוקה של סתיו</strong><span>עלה · צבע · מינימליזם טבעי</span><span class="nativeBadge">מקור מאומת</span></div>
-      </article>
-      <article class="nativeCard">
-        <img src="https://www.misgeret.co.il/Pics/michael-shmidt/275834-1385-14-12-15-L.jpg" alt="בא בימים — מיכאל שמידט">
-        <div class="nativeText"><strong>בא בימים</strong><span>עץ זית · קרני שמש · אדמה</span><span class="nativeBadge">מקור מאומת</span></div>
-      </article>
+    <div class="worlds">
+      <div class="world"><small>NEXT CURATION</small><strong>מאקרו טבע</strong><p>טיפות, פרחים ופרטים קטנים. נפתח כשיש קובץ נקי מהמקור.</p></div>
+      <div class="world"><small>NEXT CURATION</small><strong>קרני אור</strong><p>שמש, עננים ואור שחוצה את הנוף. בלי preview ישן בחזית.</p></div>
+      <div class="world"><small>NEXT CURATION</small><strong>מינימליסטי</strong><p>מעט אלמנטים, הרבה נשימה, יחס מקורי.</p></div>
+      <div class="world"><small>NEXT CURATION</small><strong>טבע קרוב</strong><p>עלה, פרח, גזע ומרקם — כשהיצירה עצמה מובילה את העיצוב.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="exhibitionStage">
+  <div class="wrap reveal">
+    <div class="eyebrow">CURATED ROOMS</div>
+    <h2 class="title">אותו בית. שלושה חדרים.</h2>
+    <p class="lead">לא רק החלפת תמונות — לכל תערוכה יש קצב, חומריות ואור משלה. המעבר ביניהן משנה את האווירה, אבל לא את הזהות.</p>
+    <div class="exhibitionControls" role="tablist" aria-label="בחירת חדר תערוכה">
+      <button class="exhibitionControl active" data-room="water">מים ואור</button>
+      <button class="exhibitionControl" data-room="golan">נשימה בגולן</button>
+      <button class="exhibitionControl" data-room="light">אור ואדמה</button>
+    </div>
+    <div class="exhibitionShell" style="margin-top:22px">
+      <div class="exhibitionMood" id="exhibitionMood" data-mood="water">
+        <div class="exhibitionLead">
+          <div class="eyebrow" id="roomKicker">ROOM 01 · WATER & LIGHT</div>
+          <h3 id="roomTitle">מים ואור</h3>
+          <p id="roomText">מרחב קריר־רך, הרבה נשימה ותנועה עדינה. התמונה נשארת שלמה; החדר רק נותן לה שקט.</p>
+          <div class="exhibitionRule">אין autoplay. אין crop אוטומטי. אין שינוי צבע על הצילום עצמו.</div>
+        </div>
+        <div class="exhibitionWall">
+          <figure><img id="roomImg1" src="https://static.wixstatic.com/media/646cc5_89146b682a6841cebafd7c15612097b0~mv2.jpg" alt="שקט על החוף — מיכאל שמידט"><figcaption id="roomCap1">שקט על החוף</figcaption></figure>
+          <figure><img id="roomImg2" src="https://static.wixstatic.com/media/646cc5_77aee53dafce44a79228f628f2214001~mv2.jpg" alt="זרימה נצחית — הבניאס — מיכאל שמידט"><figcaption id="roomCap2">זרימה נצחית — הבניאס</figcaption></figure>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -512,8 +537,8 @@ footer{padding:60px 0}
     <div class="progressCards">
       <div class="pcard"><div class="state">ACTIVE</div><strong>תערוכות מתחלפות</strong><p>4 עולמות מאוצרים כבר קיימים במנוע ה-Wix.</p></div>
       <div class="pcard"><div class="state">ACTIVE</div><strong>רגעי WOW</strong><p>שכבת חוויה חדשה: עצירה, סיפור, גלריה חיה וקיר.</p></div>
-      <div class="pcard"><div class="state">IN BUILD</div><strong>גלריה חיה במובייל</strong><p>תנועה עם הטלפון + fallback לאצבע, בלי להפוך את האתר לגימיק.</p></div>
-      <div class="pcard"><div class="state">IN BUILD</div><strong>Collector / Interiors</strong><p>מסלול עתידי של שמירה, השוואה, קיר, Private View וייעוץ כתוב.</p></div>
+      <div class="pcard"><div class="state">ACTIVE</div><strong>חדרי תערוכה</strong><p>3 שפות חלל שונות: מים ואור, נשימה בגולן, אור ואדמה — בלי לחתוך את היצירות.</p></div>
+      <div class="pcard"><div class="state">ACTIVE</div><strong>Artwork Studio</strong><p>יצירה בודדת, חלל, גימורים, חלוקה לפאנלים וסיפור — לפני מסחר.</p></div>
       <div class="pcard"><div class="state">SAFE GATE</div><strong>תמונות בלבד</strong><p>רק מקור מאומת נכנס לחזית. אין AI, אין סטוק, אין “דומה לשלך”.</p></div>
       <div class="pcard"><div class="state">NO PUBLISH</div><strong>האתר הקנוני מוגן</strong><p>העבודה מתקדמת ב-Draft/מערכות. אין Publish בלי אישור מפורש.</p></div>
     </div>
@@ -546,7 +571,7 @@ footer{padding:60px 0}
   <aside class="focusPanel">
     <div>
       <button class="focusClose" id="focusClose" aria-label="סגירה">×</button>
-      <div class="focusEyebrow">ARTWORK STUDIO</div>
+      <div class="focusEyebrow">PREMIUM GALLERY SYSTEM</div>
       <div class="focusTitle" id="focusTitle"></div>
       <div class="focusMeta" id="focusMeta"></div>
       <div class="focusActions" role="tablist" aria-label="אפשרויות ליצירה">
@@ -555,7 +580,13 @@ footer{padding:60px 0}
         <button class="focusAction" type="button" data-pane="story">הסיפור של הרגע</button>
       </div>
       <div class="studioPane" id="pane-wall">
-        <div class="wallScene"><div class="wallArtFrame"><img id="wallImg" alt=""></div></div>
+        <div class="wallScene" id="wallScene"><div class="wallArtFrame"><img id="wallImg" alt=""></div></div>
+        <div class="studioLabel">חלל</div>
+        <div class="optionRow">
+          <button class="optionChip active" data-wall="warm">קיר חם</button>
+          <button class="optionChip" data-wall="stone">אבן בהירה</button>
+          <button class="optionChip" data-wall="dark">חלל כהה</button>
+        </div>
         <div class="studioLabel">תצוגת המחשה · היחס המקורי נשמר</div>
       </div>
       <div class="studioPane" id="pane-variants">
@@ -586,12 +617,11 @@ footer{padding:60px 0}
 
 <footer>
   <div class="wrap foot">
-    <div><strong>מיכאל שמידט</strong><div class="note">תצוגת התקדמות · קפיצת עיצוב: ARTWORK STUDIO · מתעדכנת תוך כדי בנייה · לא האתר הסופי</div></div>
+    <div><strong>מיכאל שמידט</strong><div class="note">תצוגת התקדמות · קפיצת עיצוב: PREMIUM GALLERY SYSTEM · מתעדכנת תוך כדי בנייה · לא האתר הסופי</div></div>
     <div class="note">© מיכאל שמידט · כל הזכויות שמורות</div>
   </div>
 </footer>
 
-<div class="liveBar">תצוגת התקדמות · ARTWORK STUDIO · בית האמן</div>
 <script>
 const gallerySets={
  water:[
@@ -615,6 +645,38 @@ document.querySelectorAll('.liveBtn').forEach(btn=>btn.addEventListener('click',
  btn.classList.add('active');btn.setAttribute('aria-selected','true');
  const set=gallerySets[btn.dataset.set];
  set.forEach((it,i)=>{const img=document.getElementById('lg'+(i+1));const cap=document.getElementById('lc'+(i+1));img.style.opacity='.15';setTimeout(()=>{img.src=it[0];img.alt=it[1]+' — מיכאל שמידט';cap.textContent=it[1];img.style.opacity='1'},130)});
+}));
+const roomSets={
+ water:{
+  kicker:"ROOM 01 · WATER & LIGHT",title:"מים ואור",
+  text:"מרחב קריר־רך, הרבה נשימה ותנועה עדינה. התמונה נשארת שלמה; החדר רק נותן לה שקט.",
+  imgs:[
+   ["https://static.wixstatic.com/media/646cc5_89146b682a6841cebafd7c15612097b0~mv2.jpg","שקט על החוף"],
+   ["https://static.wixstatic.com/media/646cc5_77aee53dafce44a79228f628f2214001~mv2.jpg","זרימה נצחית — הבניאס"]
+  ]
+ },
+ golan:{
+  kicker:"ROOM 02 · GOLAN BREATH",title:"נשימה בגולן",
+  text:"נייר חם, אבן, אדמה וחורף. פחות קישוט, יותר מקום לרוח ולשקט.",
+  imgs:[
+   ["https://static.wixstatic.com/media/646cc5_cc7e282b3d6b4d22a645a41418dafbc8~mv2.jpg","אחרי השלג"],
+   ["https://static.wixstatic.com/media/646cc5_6ea0eb41950b4c72a0161970d48a8de8~mv2.jpg","אור מעל הגליל"]
+  ]
+ },
+ light:{
+  kicker:"ROOM 03 · EARTH & LIGHT",title:"אור ואדמה",
+  text:"חום עדין של סוף יום, שדות וזהב טבעי — בלי להפוך את הצילום לכתום או רווי מדי.",
+  imgs:[
+   ["https://static.wixstatic.com/media/646cc5_d760ae6b12e043d583db3d869bfd99b1~mv2.jpg","קציר זהוב"],
+   ["https://static.wixstatic.com/media/646cc5_6ea0eb41950b4c72a0161970d48a8de8~mv2.jpg","אור מעל הגליל"]
+  ]
+ }
+};
+document.querySelectorAll('.exhibitionControl').forEach(btn=>btn.addEventListener('click',()=>{
+ document.querySelectorAll('.exhibitionControl').forEach(b=>b.classList.remove('active'));btn.classList.add('active');
+ const r=roomSets[btn.dataset.room]; const mood=document.getElementById('exhibitionMood'); mood.dataset.mood=btn.dataset.room;
+ document.getElementById('roomKicker').textContent=r.kicker;document.getElementById('roomTitle').textContent=r.title;document.getElementById('roomText').textContent=r.text;
+ [1,2].forEach((n,i)=>{const im=document.getElementById('roomImg'+n),cap=document.getElementById('roomCap'+n);im.src=r.imgs[i][0];im.alt=r.imgs[i][1]+' — מיכאל שמידט';cap.textContent=r.imgs[i][1]});
 }));
 const focusView=document.getElementById('focusView');
 const focusImg=document.getElementById('focusImg');
@@ -647,6 +709,12 @@ const finishCopy={
  "Acrylic":"עומק וברק מודגש יותר. מתאים רק לעבודות שבהן זה משרת את הצילום.",
  "Framed":"מסגור שמכבד את היחס המקורי של היצירה, בלי חיתוך כפוי."
 };
+document.querySelectorAll('.optionChip[data-wall]').forEach(btn=>btn.addEventListener('click',()=>{
+ document.querySelectorAll('.optionChip[data-wall]').forEach(b=>b.classList.remove('active'));btn.classList.add('active');
+ const wall=document.getElementById('wallScene');
+ const bg={warm:"linear-gradient(#e9e1d6 0 72%,#cfc6ba 72%)",stone:"linear-gradient(#e7e5e0 0 72%,#c9c6c0 72%)",dark:"linear-gradient(#2b2b28 0 72%,#1d1e1c 72%)"};
+ wall.style.background=bg[btn.dataset.wall];
+}));
 document.querySelectorAll('.optionChip[data-finish]').forEach(btn=>btn.addEventListener('click',()=>{
  document.querySelectorAll('.optionChip[data-finish]').forEach(b=>b.classList.remove('active'));btn.classList.add('active');
  document.getElementById('finishTitle').textContent=btn.dataset.finish;
