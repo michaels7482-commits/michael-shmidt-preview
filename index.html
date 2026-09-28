@@ -112,6 +112,26 @@ section{padding:116px 0;border-bottom:1px solid var(--soft)}
 .nativeBadge{display:inline-block;margin-top:8px;font-size:.63rem;letter-spacing:.12em;color:var(--green)}
 
 
+
+.studioPane{display:none;margin-top:24px}
+.studioPane.active{display:block}
+.wallScene{background:linear-gradient(#e9e1d6 0 72%,#cfc6ba 72%);min-height:330px;display:flex;align-items:center;justify-content:center;padding:34px 20px;position:relative;overflow:hidden}
+.wallScene:after{content:"";position:absolute;inset:auto 0 0;height:28%;background:linear-gradient(90deg,#c8bfb2,#ded6ca)}
+.wallArtFrame{position:relative;z-index:1;background:#fff;padding:9px;box-shadow:0 18px 38px #0002;max-width:72%;max-height:240px}
+.wallArtFrame img{display:block;max-width:100%;max-height:220px;width:auto;height:auto;object-fit:contain}
+.studioLabel{font-size:.74rem;color:#a69e95;margin:10px 0 8px}
+.optionRow{display:flex;gap:8px;flex-wrap:wrap}
+.optionChip{appearance:none;border:1px solid #ffffff28;background:#ffffff07;color:#eee7dc;padding:9px 11px;border-radius:999px;font:inherit;font-size:.76rem;cursor:pointer}
+.optionChip.active{border-color:#c6a26a;background:#c6a26a18}
+.finishPreview{margin-top:14px;border:1px solid #ffffff1c;padding:14px}
+.finishPreview strong{display:block;font-size:.88rem;font-weight:500}
+.finishPreview span{display:block;font-size:.75rem;color:#a69e95;margin-top:5px;line-height:1.55}
+.splitPreview{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:12px}
+.splitPreview div{height:100px;background-position:center;background-size:cover;background-repeat:no-repeat}
+.storyPaneText{font-size:.88rem;line-height:1.9;color:#d6cec3}
+.storyPaneText em{color:#9d958d;font-style:normal}
+.studioHint{font-size:.7rem;color:#8e877f;line-height:1.55;margin-top:12px}
+
 .focusView{position:fixed;inset:0;z-index:120;background:#0d0e0f;display:none;color:#f8f4ec}
 .focusView.open{display:grid;grid-template-columns:minmax(0,1fr) 340px}
 .focusImagePane{position:relative;display:flex;align-items:center;justify-content:center;padding:28px;min-height:100svh;background:#0d0e0f}
@@ -526,15 +546,39 @@ footer{padding:60px 0}
   <aside class="focusPanel">
     <div>
       <button class="focusClose" id="focusClose" aria-label="סגירה">×</button>
-      <div class="focusEyebrow">ARTWORK FOCUS</div>
+      <div class="focusEyebrow">ARTWORK STUDIO</div>
       <div class="focusTitle" id="focusTitle"></div>
       <div class="focusMeta" id="focusMeta"></div>
-      <div class="focusActions">
-        <button class="focusAction" type="button">לראות על הקיר</button>
-        <button class="focusAction" type="button">וריאציות וגימורים</button>
-        <button class="focusAction" type="button">הסיפור של הרגע</button>
+      <div class="focusActions" role="tablist" aria-label="אפשרויות ליצירה">
+        <button class="focusAction" type="button" data-pane="wall">לראות על הקיר</button>
+        <button class="focusAction" type="button" data-pane="variants">וריאציות וגימורים</button>
+        <button class="focusAction" type="button" data-pane="story">הסיפור של הרגע</button>
       </div>
-      <div class="focusNote">מצב תצוגה ניסיוני. אין כאן עדיין בחירת מוצר או מחיר — קודם היצירה, אחר כך המכירה.</div>
+      <div class="studioPane" id="pane-wall">
+        <div class="wallScene"><div class="wallArtFrame"><img id="wallImg" alt=""></div></div>
+        <div class="studioLabel">תצוגת המחשה · היחס המקורי נשמר</div>
+      </div>
+      <div class="studioPane" id="pane-variants">
+        <div class="studioLabel">תצורה</div>
+        <div class="optionRow">
+          <button class="optionChip active" data-layout="single">יצירה אחת</button>
+          <button class="optionChip" data-layout="triptych">שלושה חלקים</button>
+        </div>
+        <div class="studioLabel">גימור</div>
+        <div class="optionRow">
+          <button class="optionChip active" data-finish="Fine Art Paper">Fine Art Paper</button>
+          <button class="optionChip" data-finish="Canvas">קנבס</button>
+          <button class="optionChip" data-finish="Acrylic">אקריליק</button>
+          <button class="optionChip" data-finish="Framed">מסגור</button>
+        </div>
+        <div class="finishPreview"><strong id="finishTitle">Fine Art Paper</strong><span id="finishText">מראה שקט ומדויק. לפני מכירה אמיתית נוודא ספק, חומר, מידות ועלויות.</span></div>
+        <div class="splitPreview" id="splitPreview" hidden><div></div><div></div><div></div></div>
+        <div class="studioHint">ההמחשות כאן הן כלי בחירה בלבד. קובץ המקור לא נחתך ולא משתנה.</div>
+      </div>
+      <div class="studioPane" id="pane-story">
+        <div class="storyPaneText"><em>מאחורי הפריים</em><br>כאן יופיע רק סיפור שאומת ממקור או ממיכאל. אם אין סיפור אמיתי — לא ממציאים אחד.</div>
+      </div>
+      <div class="focusNote">אין עדיין מחיר או checkout — קודם היצירה, אחר כך התאמה, ורק אחרי אימות ייצור ועלויות עוברים למכירה.</div>
     </div>
     <div class="focusNote">© מיכאל שמידט · תצוגת Web</div>
   </aside>
@@ -542,12 +586,12 @@ footer{padding:60px 0}
 
 <footer>
   <div class="wrap foot">
-    <div><strong>מיכאל שמידט</strong><div class="note">תצוגת התקדמות · קפיצת עיצוב: ARTWORK FOCUS · מתעדכנת תוך כדי בנייה · לא האתר הסופי</div></div>
+    <div><strong>מיכאל שמידט</strong><div class="note">תצוגת התקדמות · קפיצת עיצוב: ARTWORK STUDIO · מתעדכנת תוך כדי בנייה · לא האתר הסופי</div></div>
     <div class="note">© מיכאל שמידט · כל הזכויות שמורות</div>
   </div>
 </footer>
 
-<div class="liveBar">תצוגת התקדמות · ARTWORK FOCUS · בית האמן</div>
+<div class="liveBar">תצוגת התקדמות · ARTWORK STUDIO · בית האמן</div>
 <script>
 const gallerySets={
  water:[
@@ -583,10 +627,35 @@ document.querySelectorAll('.clickableArt').forEach(img=>img.addEventListener('cl
  focusTitle.textContent=img.dataset.title||img.alt.replace(' — מיכאל שמידט','');
  focusMeta.textContent=img.dataset.meta||'צילום מאת מיכאל שמידט';
  focusView.classList.add('open');focusView.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';
+ const wallImg=document.getElementById('wallImg'); if(wallImg){wallImg.src=img.currentSrc||img.src;wallImg.alt=img.alt}
+ document.querySelectorAll('.studioPane').forEach(p=>p.classList.remove('active'));
+ document.querySelectorAll('.focusAction').forEach(b=>b.classList.remove('active'));
+ const sp=document.getElementById('splitPreview'); if(sp){sp.hidden=true;sp.querySelectorAll('div').forEach(d=>d.style.backgroundImage='url("'+(img.currentSrc||img.src)+'")')}
 }));
 document.getElementById('focusClose').addEventListener('click',closeFocus);
 focusView.addEventListener('click',e=>{if(e.target===focusView)closeFocus()});
 addEventListener('keydown',e=>{if(e.key==='Escape')closeFocus()});
+document.querySelectorAll('.focusAction[data-pane]').forEach(btn=>btn.addEventListener('click',()=>{
+ document.querySelectorAll('.focusAction[data-pane]').forEach(b=>b.classList.remove('active'));
+ document.querySelectorAll('.studioPane').forEach(p=>p.classList.remove('active'));
+ btn.classList.add('active');
+ const pane=document.getElementById('pane-'+btn.dataset.pane); if(pane)pane.classList.add('active');
+}));
+const finishCopy={
+ "Fine Art Paper":"מראה שקט ומדויק. לפני מכירה אמיתית נוודא ספק, חומר, מידות ועלויות.",
+ "Canvas":"תחושה חומרית ורכה יותר. מוצג כהמחשה בלבד עד אימות ספק.",
+ "Acrylic":"עומק וברק מודגש יותר. מתאים רק לעבודות שבהן זה משרת את הצילום.",
+ "Framed":"מסגור שמכבד את היחס המקורי של היצירה, בלי חיתוך כפוי."
+};
+document.querySelectorAll('.optionChip[data-finish]').forEach(btn=>btn.addEventListener('click',()=>{
+ document.querySelectorAll('.optionChip[data-finish]').forEach(b=>b.classList.remove('active'));btn.classList.add('active');
+ document.getElementById('finishTitle').textContent=btn.dataset.finish;
+ document.getElementById('finishText').textContent=finishCopy[btn.dataset.finish]||'';
+}));
+document.querySelectorAll('.optionChip[data-layout]').forEach(btn=>btn.addEventListener('click',()=>{
+ document.querySelectorAll('.optionChip[data-layout]').forEach(b=>b.classList.remove('active'));btn.classList.add('active');
+ document.getElementById('splitPreview').hidden=btn.dataset.layout!=='triptych';
+}));
 const hdr=document.querySelector('header');
 addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>40),{passive:true});
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});
