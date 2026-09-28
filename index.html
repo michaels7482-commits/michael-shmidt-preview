@@ -2,732 +2,83 @@
 <html lang="he" dir="rtl">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>מיכאל שמידט — בית של אמן | תצוגת התקדמות</title>
-<meta name="description" content="תצוגת התקדמות חיה לבית האמן של מיכאל שמידט — צילום, אמנות, סיפורים, מוזיקה ו-Fine Art.">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>מיכאל שמידט — בית אמן | תצוגת Premium מלאה</title>
+<meta name="description" content="תצוגת Premium מלאה לבית האמן של מיכאל שמידט — גלריה, אוספים, Fine Art, חללים, רישוי, מוזיקה וסיפורים.">
 <style>
-:root{
-  --ink:#111210; --basalt:#181917; --paper:#f6f1e8; --paper2:#ece5da; --soft:#d6cec1;
-  --muted:#746e66; --green:#59664d; --water:#557277; --lichen:#8b8f72; --sun:#b38f5a;
-  --max:1280px;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,"Noto Sans Hebrew",sans-serif;font-size:16px;line-height:1.5}
-::selection{background:#d7c7a8;color:#111}
-a:focus-visible,button:focus-visible{outline:2px solid #b58e54;outline-offset:4px}
-a{color:inherit;text-decoration:none}
-img{display:block;width:100%;height:auto}
-.wrap{width:min(var(--max),92vw);margin:auto}
-header{position:fixed;inset:0 0 auto;z-index:50;color:#fff;background:linear-gradient(#000a,transparent);transition:.3s}
-header.scrolled{background:#111214e8;backdrop-filter:blur(10px);border-bottom:1px solid #ffffff18}
-nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px}
-.brand{font-size:.88rem;letter-spacing:.06em;white-space:nowrap;display:flex;align-items:center;gap:12px}
-.brand:before{content:"MS";display:grid;place-items:center;width:34px;height:34px;border:1px solid #ffffff70;border-radius:50%;font-size:.66rem;letter-spacing:.08em}
-.menu{display:flex;gap:22px;font-size:.8rem;align-items:center}
-.menu a{opacity:.88}
-.menu a:hover{opacity:1}
-.hero{min-height:100svh;position:relative;display:flex;align-items:flex-end;overflow:hidden;background:#111}
-.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 58%;}
-.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#0000 0%,#0001 42%,#000b 100%)}
-.heroText{position:relative;z-index:2;color:#fff;width:min(690px,54vw);margin-right:auto;padding-bottom:8vh}
-.heroText:before{content:"";display:block;width:58px;height:1px;background:#d7b06a;margin-bottom:20px}
-.eyebrow,.kicker{font-size:.67rem;letter-spacing:.2em;color:var(--muted);margin-bottom:13px}
-.hero .kicker{color:#ddd4c8}
-h1,h2,h3,p{margin-top:0}
-h1{font-size:clamp(3rem,5.5vw,6.5rem);line-height:1.03;font-weight:500;margin-bottom:24px}
-h2{font-weight:500}
-.hero p{max-width:540px;line-height:1.85;color:#eee7dc;font-size:1.02rem}
-.cta{display:inline-block;margin-top:22px;padding-bottom:7px;border-bottom:1px solid currentColor;font-size:.9rem}
-section{padding:116px 0;border-bottom:1px solid var(--soft)}
-.title{font-size:clamp(2rem,4vw,4.5rem);line-height:1.04;font-weight:500;margin-bottom:18px;letter-spacing:-.018em}
-.lead{max-width:730px;color:#514d47;line-height:1.9;font-size:1.01rem}
-.feature{display:grid;grid-template-columns:1.22fr .78fr;gap:54px;align-items:end;margin-top:44px}
-.feature img{width:100%;height:auto;object-fit:contain;background:#ebe5dc}
-.feature h3{font-size:2rem;font-weight:500;margin-bottom:12px}
-.grid3{display:grid;grid-template-columns:1.35fr .82fr .82fr;gap:18px;margin-top:42px}
-.grid3{align-items:start}
-.grid3 img{width:100%;height:auto;object-fit:contain;background:#ebe5dc}
-.cap{font-size:.82rem;color:var(--muted);margin-top:9px}
-.manifesto{background:var(--basalt);color:var(--paper)}
-.manifestoGrid{display:grid;grid-template-columns:.78fr 1.22fr;gap:72px;align-items:start}
-.manifesto .title{max-width:470px}
-.manifesto p{font-size:1.12rem;line-height:2;color:#d8d0c4;max-width:700px}
-.seasons{background:#f3eee6}
-.seasonGrid{display:grid;grid-template-columns:.72fr 1.28fr;gap:68px;align-items:start}
-.seasonList{border-top:1px solid #cfc6ba}
-.season{padding:22px 0;border-bottom:1px solid #cfc6ba;display:grid;grid-template-columns:110px 1fr;gap:20px}
-.season b{font-weight:500}
-.season span{color:var(--muted);line-height:1.65;font-size:.88rem}
-.thumbPair{display:grid;grid-template-columns:1.2fr .8fr;gap:14px}
-.thumbPair{align-items:start}
-.thumbPair img{width:100%;height:auto;object-fit:contain;background:#ebe5dc}
-.thumbPair img:last-child{align-self:start}
-.worlds{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:38px}
-.world{min-height:250px;border:1px solid #cdc4b7;padding:22px;display:flex;flex-direction:column;justify-content:flex-end;transition:.25s;background:#fff5}
-.world:hover{transform:translateY(-3px);background:#fff}
-.world small{font-size:.67rem;letter-spacing:.16em;color:var(--muted);margin-bottom:8px}
-.world strong{font-size:1.4rem;font-weight:500}
-.world p{font-size:.83rem;line-height:1.65;color:var(--muted);margin:9px 0 0}
-.atlas{background:#121416;color:var(--paper);overflow:hidden}
-.atlasHead{display:grid;grid-template-columns:.75fr 1.25fr;gap:64px;align-items:end;margin-bottom:40px}
-.atlas .lead{color:#c9c2b8}
-.atlasRail{display:grid;grid-template-columns:repeat(12,1fr);gap:14px;align-items:start}
-.atlasShot{position:relative;overflow:hidden;background:#222}
-.atlasShot:nth-child(1){grid-column:span 5}.atlasShot:nth-child(2){grid-column:span 3}.atlasShot:nth-child(3){grid-column:span 4}.atlasShot:nth-child(4){grid-column:span 4}.atlasShot:nth-child(5){grid-column:span 8}
-.atlasShot img{width:100%;height:auto;object-fit:contain;transition:transform .7s ease,filter .7s ease;}
-.atlasShot:hover img{transform:scale(1.012);}
-.atlasTag{position:absolute;inset:auto 12px 12px auto;background:#111b;color:#fff;padding:7px 9px;font-size:.68rem;backdrop-filter:blur(6px)}
-.roomTeaser{display:grid;grid-template-columns:1.15fr .85fr;gap:64px;align-items:center}
-.roomFrame{border:1px solid #c8bfb2;background:#e8e1d7;padding:4vw}
-.roomWall{background:#f8f5ef;min-height:380px;display:flex;align-items:center;justify-content:center;box-shadow:inset 0 0 0 1px #00000008}
-.roomArt{width:min(68%,520px);box-shadow:0 24px 44px #0002;border:10px solid #111}
-.roomArt img{width:100%;height:auto;object-fit:contain}
-.roomHint{font-size:.8rem;color:var(--muted);margin-top:12px;text-align:center}
-
-.exhibitionStage{background:var(--paper2)}
-.exhibitionShell{border:1px solid #cbc2b5;background:#f8f4ed;padding:18px}
-.exhibitionMood{display:grid;grid-template-columns:1.08fr .92fr;gap:18px;align-items:start;transition:background .35s ease}
-.exhibitionMood[data-mood="water"]{background:linear-gradient(135deg,#e9efed,#f5f1e8)}
-.exhibitionMood[data-mood="golan"]{background:linear-gradient(135deg,#e7e6dc,#f4efe5)}
-.exhibitionMood[data-mood="light"]{background:linear-gradient(135deg,#efe5d5,#f7f2e9)}
-.exhibitionLead{padding:26px 24px 24px}
-.exhibitionLead h3{font-size:clamp(1.8rem,3.1vw,3.4rem);font-weight:500;margin:0 0 12px}
-.exhibitionLead p{color:#5e5952;line-height:1.85;max-width:500px}
-.exhibitionWall{padding:24px;display:grid;gap:16px}
-.exhibitionWall figure{margin:0;background:#fff;padding:10px}
-.exhibitionWall img{width:100%;height:auto;object-fit:contain}
-.exhibitionWall figcaption{font-size:.75rem;color:#777168;margin-top:8px}
-.exhibitionControls{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}
-.exhibitionControl{appearance:none;border:1px solid #bfb6a8;background:transparent;padding:10px 13px;border-radius:999px;font:inherit;font-size:.8rem;cursor:pointer}
-.exhibitionControl.active{background:#1a1b19;color:#f7f2e9;border-color:#1a1b19}
-.exhibitionRule{margin-top:18px;font-size:.74rem;color:#807970;line-height:1.7}
-@media(max-width:940px){.exhibitionMood{grid-template-columns:1fr}.exhibitionLead,.exhibitionWall{padding:18px}}
-
-.liveGallery{background:#f0ebe2}
-.liveGalleryGrid{display:grid;grid-template-columns:.7fr 1.3fr;gap:68px;align-items:start}
-.liveControls{display:flex;flex-direction:column;border-top:1px solid #c9c0b4}
-.liveBtn{appearance:none;border:0;border-bottom:1px solid #c9c0b4;background:transparent;text-align:right;padding:20px 0;font:inherit;cursor:pointer;color:#4e4943;transition:.2s}
-.liveBtn strong{display:block;font-size:1.15rem;font-weight:500;color:#17191b}
-.liveBtn span{display:block;font-size:.8rem;color:var(--muted);margin-top:5px}
-.liveBtn.active{padding-right:14px;border-right:2px solid var(--sun);background:#fff7}
-.liveStage{position:sticky;top:92px;display:grid;grid-template-columns:1.25fr .75fr;gap:12px;min-height:560px}
-.liveStage figure{margin:0;position:relative;overflow:hidden;background:#111;display:flex;align-items:center;justify-content:center}
-.liveStage figure:first-child{grid-row:span 2}
-.liveStage img{width:100%;height:auto;max-height:72vh;object-fit:contain;transition:opacity .28s ease,transform .45s ease}
-.liveStage figure:hover img{transform:scale(1.015)}
-.liveCaption{position:absolute;inset:auto 12px 12px 12px;color:white;background:#1119;padding:10px 12px;font-size:.75rem;backdrop-filter:blur(5px)}
-.liveMeta{margin-top:14px;font-size:.82rem;color:var(--muted)}
-@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}.reveal{opacity:1!important;transform:none!important;transition:none!important}.liveStage img,.atlasShot img{transition:none!important}}
-
-.originalWorlds{background:#fbf8f2}
-.originalHead{display:grid;grid-template-columns:.72fr 1.28fr;gap:70px;align-items:end;margin-bottom:44px}
-.originalHead .lead{max-width:760px}
-.nativeGallery{columns:3;column-gap:18px}
-.nativeCard{break-inside:avoid;margin:0 0 18px;display:inline-block;width:100%;background:#fff;padding:0 0 14px;border-bottom:1px solid #d8d0c4}
-.nativeCard img{display:block;width:100%;height:auto;object-fit:contain;background:#ede7de}
-.nativeText{padding:12px 4px 0}
-.nativeText strong{display:block;font-weight:500;font-size:1rem}
-.nativeText span{display:block;color:var(--muted);font-size:.78rem;margin-top:4px;line-height:1.55}
-.nativeBadge{display:inline-block;margin-top:8px;font-size:.63rem;letter-spacing:.12em;color:var(--green)}
-
-
-
-.studioPane{display:none;margin-top:24px}
-.studioPane.active{display:block}
-.wallScene{background:linear-gradient(#e9e1d6 0 72%,#cfc6ba 72%);min-height:330px;display:flex;align-items:center;justify-content:center;padding:34px 20px;position:relative;overflow:hidden}
-.wallScene:after{content:"";position:absolute;inset:auto 0 0;height:28%;background:linear-gradient(90deg,#c8bfb2,#ded6ca)}
-.wallArtFrame{position:relative;z-index:1;background:#fff;padding:9px;box-shadow:0 18px 38px #0002;max-width:72%;max-height:240px}
-.wallArtFrame img{display:block;max-width:100%;max-height:220px;width:auto;height:auto;object-fit:contain}
-.studioLabel{font-size:.74rem;color:#a69e95;margin:10px 0 8px}
-.optionRow{display:flex;gap:8px;flex-wrap:wrap}
-.optionChip{appearance:none;border:1px solid #ffffff28;background:#ffffff07;color:#eee7dc;padding:9px 11px;border-radius:999px;font:inherit;font-size:.76rem;cursor:pointer}
-.optionChip.active{border-color:#c6a26a;background:#c6a26a18}
-.finishPreview{margin-top:14px;border:1px solid #ffffff1c;padding:14px}
-.finishPreview strong{display:block;font-size:.88rem;font-weight:500}
-.finishPreview span{display:block;font-size:.75rem;color:#a69e95;margin-top:5px;line-height:1.55}
-.splitPreview{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:12px}
-.splitPreview div{height:100px;background-position:center;background-size:cover;background-repeat:no-repeat}
-.storyPaneText{font-size:.88rem;line-height:1.9;color:#d6cec3}
-.storyPaneText em{color:#9d958d;font-style:normal}
-.studioHint{font-size:.7rem;color:#8e877f;line-height:1.55;margin-top:12px}
-
-.focusView{position:fixed;inset:0;z-index:120;background:#0d0e0f;display:none;color:#f8f4ec}
-.focusView.open{display:grid;grid-template-columns:minmax(0,1fr) 340px}
-.focusImagePane{position:relative;display:flex;align-items:center;justify-content:center;padding:28px;min-height:100svh;background:#0d0e0f}
-.focusImagePane img{max-width:100%;max-height:calc(100svh - 56px);width:auto;height:auto;object-fit:contain;box-shadow:none}
-.focusPanel{background:#17191b;border-right:1px solid #ffffff18;padding:30px 26px;display:flex;flex-direction:column;justify-content:space-between}
-.focusClose{appearance:none;border:1px solid #ffffff33;background:transparent;color:#fff;border-radius:999px;width:42px;height:42px;font-size:1.25rem;cursor:pointer}
-.focusEyebrow{font-size:.63rem;letter-spacing:.16em;color:#aaa198;margin-top:34px}
-.focusTitle{font-size:2rem;font-weight:500;margin:8px 0 14px}
-.focusMeta{font-size:.86rem;line-height:1.8;color:#cfc6b8}
-.focusActions{display:grid;gap:9px;margin-top:28px}
-.focusAction{appearance:none;border:1px solid #ffffff26;background:#ffffff08;color:#fff;padding:13px 14px;text-align:right;font:inherit;cursor:pointer}
-.focusAction:hover{background:#ffffff12}
-.focusNote{font-size:.72rem;color:#8f8880;line-height:1.65;margin-top:18px}
-.clickableArt{cursor:zoom-in}
-.galleryPrinciple{margin-top:20px;font-size:.82rem;color:var(--muted);max-width:620px;line-height:1.7}
-@media(max-width:940px){
- .focusView.open{display:block;overflow:auto}
- .focusImagePane{min-height:auto;padding:18px 12px 8px}
- .focusImagePane img{max-height:72svh}
- .focusPanel{border-right:0;border-top:1px solid #ffffff18;padding:22px 20px 32px}
- .focusClose{position:fixed;top:72px;left:14px;z-index:2;background:#111c}
-}
-
-.moment{background:var(--ink);color:var(--paper)}
-.momentGrid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
-.moment img{width:100%;height:auto;object-fit:contain;background:#0f100f}
-.quote{font-size:clamp(2.2rem,4vw,4.6rem);line-height:1.14;font-weight:500;margin-bottom:20px}
-.moment p{color:#cfc6b8;line-height:1.9}
-.finder{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px;align-items:start}
-.chips{display:flex;flex-wrap:wrap;gap:10px}
-.chip{padding:12px 17px;border:1px solid #c8c0b5;border-radius:999px;font-size:.85rem;background:#fff0}
-.paths{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--soft);border-bottom:1px solid var(--soft);margin-top:40px}
-.path{padding:34px 30px;border-left:1px solid var(--soft);transition:.25s}
-.path:last-child{border-left:0}
-.path:hover{background:var(--paper2)}
-.path strong{display:block;font-size:1.52rem;font-weight:500}
-.path span{display:block;margin-top:8px;color:var(--muted);font-size:.84rem}
-.artistHouse{background:#e9e4da}
-.houseGrid{display:grid;grid-template-columns:.72fr 1.28fr;gap:70px}
-.houseList{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid #c7bfb3}
-.houseItem{padding:22px 0;border-bottom:1px solid #c7bfb3}
-.houseItem:nth-child(odd){padding-left:24px;border-left:1px solid #c7bfb3}
-.houseItem:nth-child(even){padding-right:24px}
-.houseItem strong{display:block;font-weight:500;font-size:1.15rem}
-.houseItem span{display:block;color:var(--muted);font-size:.82rem;line-height:1.6;margin-top:6px}
-.recognition{display:grid;grid-template-columns:.72fr 1.28fr;gap:70px}
-.fact{padding:22px 0;border-top:1px solid var(--soft)}
-.fact strong{display:block;font-size:1.13rem;font-weight:500}
-.fact span{display:block;color:var(--muted);margin-top:6px;font-size:.85rem;line-height:1.65}
-.progress{background:#fff}
-.progressGrid{display:grid;grid-template-columns:.72fr 1.28fr;gap:70px}
-.progressCards{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-.pcard{border:1px solid var(--soft);padding:22px;min-height:160px}
-.pcard .state{font-size:.68rem;letter-spacing:.13em;color:var(--green);margin-bottom:18px}
-.pcard strong{font-weight:500;font-size:1.15rem}
-.pcard p{font-size:.83rem;line-height:1.65;color:var(--muted);margin-top:9px}
-.about,.contact{display:grid;grid-template-columns:.72fr 1.28fr;gap:72px}
-.about p{font-size:1.12rem;line-height:2;color:#4d4942}
-.big{font-size:clamp(2.7rem,5vw,5rem);line-height:1.04;font-weight:500}
-.process{display:grid;grid-template-columns:repeat(4,1fr);margin-top:36px;border-top:1px solid var(--soft);border-bottom:1px solid var(--soft)}
-.step{padding:26px 22px;border-left:1px solid var(--soft)}
-.step:last-child{border-left:0}
-.num{font-size:.72rem;color:var(--muted);margin-bottom:18px}
-.step strong{font-weight:500}
-.step p{font-size:.84rem;color:var(--muted);line-height:1.7;margin:8px 0 0}
-footer{padding:60px 0}
-.foot{display:flex;justify-content:space-between}
-.note{font-size:.72rem;color:var(--muted);margin-top:10px}
-.reveal{opacity:0;transform:translateY(16px);transition:.6s}
-.reveal.show{opacity:1;transform:none}
-@media(max-width:940px){
-  .menu{display:none}
-  nav{height:62px}
-  .hero:after{background:linear-gradient(0deg,#000c,#0001 65%)}
-  .heroText{width:auto;margin:0;padding:0 22px 52px}
-  h1{font-size:11vw}
-  section{padding:78px 0}
-  .feature,.manifestoGrid,.seasonGrid,.momentGrid,.finder,.artistHouse .houseGrid,.recognition,.progressGrid,.about,.contact,.atlasHead,.roomTeaser,.liveGalleryGrid{grid-template-columns:1fr;gap:28px}
-  .grid3,.worlds,.paths,.process,.progressCards{grid-template-columns:1fr}
-  .atlasRail{display:block}
-  .atlasShot{margin-bottom:14px}
-  .originalHead{grid-template-columns:1fr;gap:24px}
-  .nativeGallery{columns:1}
-  .roomFrame{padding:28px 18px}.roomWall{min-height:270px}.roomArt{width:78%;border-width:7px}
-  .liveStage{position:relative;top:auto;grid-template-columns:1fr;min-height:auto}.liveStage figure{min-height:0;padding:0}.liveStage figure:first-child{grid-column:1/-1;grid-row:auto}.liveStage img{max-height:none}
-  .houseList{grid-template-columns:1fr}
-  .houseItem:nth-child(odd),.houseItem:nth-child(even){padding:20px 0;border-left:0}
-  .path,.step{border-left:0;border-bottom:1px solid var(--soft)}
-  .foot{display:block}
-}
+:root{--ink:#111210;--basalt:#181917;--paper:#f6f1e8;--paper2:#ece5da;--stone:#d6cec1;--muted:#746e66;--green:#59664d;--water:#557277;--sun:#b38f5a;--max:1320px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,"Noto Sans Hebrew",sans-serif;line-height:1.55}img{display:block;max-width:100%}button,a{font:inherit}a{color:inherit;text-decoration:none}button{color:inherit}.wrap{width:min(var(--max),92vw);margin:auto}
+header{position:fixed;inset:0 0 auto;z-index:80;background:#f6f1e8ee;border-bottom:1px solid #cbc3b7;backdrop-filter:blur(14px)}nav{min-height:86px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brandLogo img{width:310px;height:auto}.navLinks{display:flex;gap:18px;align-items:center;font-size:.78rem}.navLinks a{opacity:.72}.navLinks a:hover{opacity:1}.savedLink{border:1px solid #bdb4a8;border-radius:999px;padding:8px 12px}
+.hero{min-height:100svh;padding-top:86px;display:grid;grid-template-columns:1.25fr .75fr;background:#111}.heroVisual{position:relative;min-height:calc(100svh - 86px);display:flex;align-items:center;justify-content:center;overflow:hidden}.heroVisual:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#0000,#0004);z-index:1}.heroVisual img{width:100%;height:100%;object-fit:cover}.heroCopy{background:#141512;color:#f7f2e9;padding:9vh 5vw;display:flex;flex-direction:column;justify-content:flex-end}.kicker,.eyebrow{font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:#9b958d}.heroCopy h1{font-size:clamp(2.5rem,4.7vw,5rem);line-height:1.05;font-weight:500;margin:18px 0 26px}.heroCopy p{max-width:520px;color:#d4ccc0;line-height:1.9}.cta{display:inline-block;margin-top:18px;padding:10px 0;border-bottom:1px solid currentColor;width:max-content}.heroMini{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:44px;border-top:1px solid #ffffff24;padding-top:18px}.heroMini span{font-size:.72rem;color:#a9a198}
+section{padding:110px 0;border-bottom:1px solid var(--stone)}.title{font-size:clamp(2.2rem,4vw,4.7rem);line-height:1.04;font-weight:500;letter-spacing:-.02em;margin:12px 0 20px}.lead{max-width:760px;font-size:1rem;line-height:1.9;color:#57524c}
+.featureBand{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px;align-items:center}.featureBand img{width:100%;height:auto;object-fit:contain}.featureCopy h3{font-size:2rem;font-weight:500;margin:10px 0}
+.archiveHead{display:grid;grid-template-columns:.7fr 1.3fr;gap:70px;align-items:end;margin-bottom:42px}.archiveGrid{columns:4 260px;column-gap:14px}.artCard{position:relative;break-inside:avoid;margin:0 0 18px;background:#fbf8f2;border-bottom:1px solid #d7cfc3;padding-bottom:12px}.artCard img{width:100%;height:auto;object-fit:contain;cursor:zoom-in;background:#e9e4dc}.artMeta{padding:10px 3px 0}.artMeta strong{display:block;font-weight:500}.artMeta span{display:block;font-size:.75rem;color:var(--muted);margin-top:4px}.saveBtn{position:absolute;top:10px;left:10px;z-index:2;width:36px;height:36px;border-radius:50%;border:1px solid #ffffff88;background:#1118;color:#fff;backdrop-filter:blur(5px);cursor:pointer}.saveBtn.saved{background:#f3eee5;color:#111}
+.collections{background:#171816;color:#f5f0e7}.collections .lead{color:#c9c0b5}.collectionRail{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:38px}.collectionCard{min-height:320px;border:1px solid #ffffff1d;padding:24px;display:flex;flex-direction:column;justify-content:flex-end;background:linear-gradient(180deg,#ffffff05,#0002)}.collectionCard small{color:#aaa197;letter-spacing:.14em}.collectionCard h3{font-size:1.7rem;font-weight:500;margin:10px 0}.collectionCard p{font-size:.82rem;color:#bbb3a9}
+.roomSection{background:#ede6db}.roomGrid{display:grid;grid-template-columns:.72fr 1.28fr;gap:60px}.roomControls{display:grid;border-top:1px solid #c6bdb0}.roomBtn{appearance:none;border:0;border-bottom:1px solid #c6bdb0;background:transparent;text-align:right;padding:18px 0;cursor:pointer}.roomBtn.active{padding-right:12px;border-right:2px solid var(--green)}.roomScene{background:linear-gradient(#e7e0d5 0 72%,#cfc5b7 72%);min-height:540px;display:flex;align-items:center;justify-content:center;padding:44px;position:relative}.roomScene:after{content:"";position:absolute;inset:auto 7% 8% 7%;height:6px;background:#0002;filter:blur(8px)}.roomArt{position:relative;z-index:1;background:#fff;padding:10px;box-shadow:0 28px 55px #0003;max-width:68%}.roomArt img{width:100%;height:auto;object-fit:contain}.roomCaption{text-align:center;font-size:.72rem;color:#756f67;margin-top:10px}
+.immersive{background:#0f100f;color:#f5f0e7;overflow:hidden}.immersiveGrid{display:grid;grid-template-columns:.65fr 1.35fr;gap:60px;align-items:center}.immersive .lead{color:#c7beb3}.gyroViewport{perspective:1000px;overflow:hidden;padding:50px 0}.gyroRail{display:flex;gap:24px;transform:translateX(calc(var(--shift,0) * 1px));transition:transform .2s ease}.gyroRail figure{margin:0;min-width:46%;transform:rotateY(var(--ry,0deg));transition:transform .25s}.gyroRail img{width:100%;height:auto;object-fit:contain;background:#222}.gyroBtn{margin-top:18px;border:1px solid #ffffff35;background:#ffffff08;color:#fff;padding:12px 15px;border-radius:999px;cursor:pointer}
+.toolLab{background:#fbf8f2}.toolGrid{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px}.toolButtons{display:grid;border-top:1px solid #d1c8bb}.toolBtn{appearance:none;background:transparent;border:0;border-bottom:1px solid #d1c8bb;padding:18px 0;text-align:right;cursor:pointer}.toolBtn strong{display:block;font-weight:500}.toolBtn span{font-size:.76rem;color:var(--muted)}.toolBtn.active{padding-right:12px;border-right:2px solid var(--green)}.toolPane{border:1px solid #d1c8bb;background:#f6f1e8;padding:32px;min-height:360px}.toolPane h3{font-size:2rem;font-weight:500;margin:0 0 12px}.toolPane p{line-height:1.9;color:#5c5750}.toolFlow{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:26px}.toolStep{border:1px solid #d6cec1;padding:14px;min-height:110px}.toolStep small{display:block;color:var(--muted);margin-bottom:8px}
+.paths{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:34px}.path{border:1px solid #d1c8bb;padding:22px;min-height:200px;display:flex;flex-direction:column;justify-content:flex-end}.path strong{font-size:1.35rem;font-weight:500}.path span{font-size:.8rem;color:var(--muted);margin-top:8px}
+.about{display:grid;grid-template-columns:.7fr 1.3fr;gap:70px}.about p{font-size:1.08rem;line-height:2;color:#4f4a44}.contact{background:#171816;color:#f5f0e7}.contact .lead{color:#c9c0b5}
+.savedDock{position:fixed;right:16px;bottom:16px;z-index:70;background:#151613eb;color:#fff;border:1px solid #ffffff20;padding:10px 14px;border-radius:999px;font-size:.76rem;backdrop-filter:blur(8px);display:none}.savedDock.show{display:block}
+.focusView{position:fixed;inset:0;z-index:120;background:#0d0e0f;display:none;color:#f8f4ec}.focusView.open{display:grid;grid-template-columns:minmax(0,1fr) 360px}.focusImagePane{display:flex;align-items:center;justify-content:center;padding:28px;min-height:100svh}.focusImagePane img{max-width:100%;max-height:calc(100svh - 56px);width:auto;height:auto;object-fit:contain}.focusPanel{background:#17191b;border-right:1px solid #ffffff18;padding:30px 26px;overflow:auto}.focusClose{appearance:none;border:1px solid #ffffff33;background:transparent;color:#fff;border-radius:50%;width:42px;height:42px;font-size:1.25rem;cursor:pointer}.focusTitle{font-size:2rem;font-weight:500;margin:28px 0 8px}.focusMeta{color:#bfb7ad;font-size:.84rem}.focusActions{display:grid;gap:9px;margin-top:26px}.focusAction{appearance:none;border:1px solid #ffffff26;background:#ffffff08;color:#fff;padding:13px 14px;text-align:right;cursor:pointer}.studioPane{display:none;margin-top:20px}.studioPane.active{display:block}.studioPane p{color:#cfc6b8;line-height:1.8;font-size:.85rem}
+footer{padding:48px 0}.foot{display:flex;align-items:center;justify-content:space-between;gap:30px}.footLogo img{width:240px;height:auto}
+@media(max-width:980px){header nav{min-height:72px}.brandLogo img{width:215px}.navLinks a:not(.savedLink){display:none}.hero{grid-template-columns:1fr;padding-top:72px}.heroVisual{min-height:58svh}.heroCopy{padding:42px 22px 52px}.heroCopy h1{font-size:11vw}.heroMini{grid-template-columns:1fr}.archiveHead,.featureBand,.roomGrid,.immersiveGrid,.toolGrid,.about{grid-template-columns:1fr;gap:28px}.archiveGrid{columns:2 145px}.collectionRail,.paths{grid-template-columns:1fr 1fr}.roomScene{min-height:360px;padding:28px 18px}.roomArt{max-width:84%}.gyroRail figure{min-width:78%}.toolFlow{grid-template-columns:1fr 1fr}.focusView.open{display:block;overflow:auto}.focusImagePane{min-height:auto;padding:86px 12px 10px}.focusImagePane img{max-height:65svh}.focusPanel{border-right:0;border-top:1px solid #ffffff18}.focusClose{position:fixed;left:14px;top:82px;background:#111d;z-index:2}.foot{display:block}.footLogo img{width:220px}}
+@media(max-width:560px){section{padding:76px 0}.archiveGrid{columns:1}.collectionRail,.paths,.toolFlow{grid-template-columns:1fr}.heroVisual{min-height:52svh}.roomArt{max-width:90%}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
 </style>
 </head>
 <body>
-<header>
-  <div class="wrap">
-    <nav>
-      <div class="brand">מיכאל שמידט · MICHAEL SHMIDT</div>
-      <div class="menu">
-        <a href="#works">גלריה</a>
-        <a href="#collections">אוספים</a>
-        <a href="#moment">הרגע</a>
-        <a href="#house">בית האמן</a>
-        <a href="#progress">התקדמות</a>
-        <a href="#story">אודות</a>
-      </div>
-    </nav>
-  </div>
-</header>
+<header><div class="wrap"><nav><a class="brandLogo" href="#top"><img src="data:image/webp;base64,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" alt="מיכאל שמידט — לוגו האתר"></a><div class="navLinks"><a href="#gallery">גלריה</a><a href="#collections">אוספים</a><a href="#rooms">חללים</a><a href="#tools">כלים</a><a href="#about">אודות</a><a href="#contact">יצירת קשר</a><a class="savedLink" href="#gallery">שמורים <b id="savedCount">0</b></a></div></nav></div></header>
+<main id="top">
+<section class="hero"><div class="heroVisual"><img src="https://static.wixstatic.com/media/646cc5_6850bf4b38eb49859244e7c88123bd90~mv2.jpg" alt="שעת הזהב בכנרת — מיכאל שמידט"></div><div class="heroCopy"><div class="kicker">MICHAEL SHMIDT · ARTIST HOUSE</div><h1>האמן הוא אלוקים —<br>ואני תפקידי לעצור את הרגע.</h1><p>צילום הוא הדלת. מכאן נכנסים לעולם של אור, אדמה, מים, מוזיקה, מילים וסיפורים — כולם חלק מאותו בית.</p><a class="cta" href="#gallery">להיכנס לגלריה ←</a><div class="heroMini"><span>17 יצירות נקיות בתצוגה</span><span>Original Frame first</span><span>Fine Art · Interiors · Licensing</span></div></div></section>
 
-<main>
-<section class="hero">
-  <img src="https://static.wixstatic.com/media/646cc5_6ea0eb41950b4c72a0161970d48a8de8~mv2.jpg" alt="אור מעל הגליל — מיכאל שמידט">
-  <div class="wrap">
-    <div class="heroText">
-      <div class="kicker">MICHAEL SHMIDT · GOLAN · ARTIST HOUSE</div>
-      <h1>האמן הוא אלוקים —<br>ואני תפקידי לעצור את הרגע.</h1>
-      <p>אני מיכאל. אמן מהגולן. אני מחפש את הרגע הקטן שבו האור, המקום והזמן מתחברים — ועוצר אותו לפני שהוא נעלם.</p>
-      <a class="cta" href="#works">לגלריה ←</a>
-    </div>
-  </div>
-</section>
+<section><div class="wrap featureBand"><div class="featureCopy"><div class="eyebrow">FEATURED MOMENT</div><h2 class="title">קודם היצירה.</h2><h3>זרימה נצחית — הבניאס</h3><p class="lead">בלי קופסת מוצר ובלי ריבוע בכוח. הפריים נשאר שלם; הממשק רק נותן לו מקום.</p><a class="cta" href="#gallery">עוד עבודות ←</a></div><img class="clickableArt" data-title="זרימה נצחית — הבניאס" data-meta="מים · אבן · פרא" src="https://static.wixstatic.com/media/646cc5_77aee53dafce44a79228f628f2214001~mv2.jpg" alt="זרימה נצחית — הבניאס — מיכאל שמידט"></div></section>
 
-<section id="works">
-  <div class="wrap reveal">
-    <div class="eyebrow">SELECTED WORK</div>
-    <h2 class="title">יש רגעים שלא צריך להסביר.</h2>
-    <p class="lead">פשוט מסתכלים. אם משהו עוצר אתכם לשנייה — כנראה שהיה שווה לעצור אותו.</p>
-    <div class="feature">
-      <img class="clickableArt" data-title="זרימה נצחית — הבניאס" data-meta="מים · אבן · אור" src="https://static.wixstatic.com/media/646cc5_77aee53dafce44a79228f628f2214001~mv2.jpg" alt="זרימה נצחית — הבניאס">
-      <div>
-        <div class="eyebrow">WATER · WILD · LIGHT</div>
-        <h3>זרימה נצחית — הבניאס</h3>
-        <p class="lead">מים, אבן ואור. בלי להפוך את הטבע להצגה.</p>
-        <a class="cta" href="#collections">עוד מהעולם הזה ←</a>
-      </div>
-    </div>
-  </div>
-</section>
+<section id="gallery"><div class="wrap"><div class="archiveHead"><div><div class="eyebrow">THE ARCHIVE · CLEAN FRONT</div><h2 class="title">יותר מעבודות בודדות.</h2></div><div><p class="lead">זה כבר גוף עבודה שאפשר ללכת בו לאיבוד קצת. כל התמונות כאן הן נכסים נקיים שכבר מחוברים אצלנו ל-Wix; אין כאן תמונת סטוק, AI או watermark ישן של מסגרת.</p><p class="lead" style="font-size:.82rem">לחיצה על תמונה פותחת Artwork View. הלב שומר אותה מקומית במכשיר לצורך השוואה בהמשך.</p></div></div><div class="archiveGrid"><article class="artCard" data-index="0"><button class="saveBtn" aria-label="שמירת שקט על החוף" data-save="0">♡</button><img class="clickableArt" data-title="שקט על החוף" data-meta="מים · מרחב · נשימה" src="https://static.wixstatic.com/media/646cc5_89146b682a6841cebafd7c15612097b0~mv2.jpg" alt="שקט על החוף — מיכאל שמידט" loading="lazy"><div class="artMeta"><strong>שקט על החוף</strong><span>מים · מרחב · נשימה</span></div></article><article class="artCard" data-index="1"><button class="saveBtn" aria-label="שמירת זרימה נצחית — הבניאס" data-save="1">♡</button><img class="clickableArt" data-title="זרימה נצחית — הבניאס" data-meta="מים · אבן · פרא" src="https://static.wixstatic.com/media/646cc5_77aee53dafce44a79228f628f2214001~mv2.jpg" alt="זרימה נצחית — הבניאס — מיכאל שמידט" loading="lazy"><div class="artMeta"><strong>זרימה נצחית — הבניאס</strong><span>מים · אבן · פרא</span></div></article><article class="artCard" data-index="2"><button class="saveBtn" aria-label="שמירת קציר זהוב" data-save="2">♡</button><img class="clickableArt" data-title="קציר זהוב" data-meta="אדמה · אור · זהב" src="https://static.wixstatic.com/media/646cc5_d760ae6b12e043d583db3d869bfd99b1~mv2.jpg" alt="קציר זהוב — מיכאל שמידט" loading="lazy"><div class="artMeta"><strong>קציר זהוב</strong><span>אדמה · אור · זהב</span></div></article><article class="artCard" data-index="3"><button class="saveBtn" aria-label="שמירת אחרי השלג" data-save="3">♡</button><img class="clickableArt" data-title="אחרי השלג" data-meta="חורף · שקט · מרחב" src="https://static.wixstatic.com/media/646cc5_cc7e282b3d6b4d22a645a41418dafbc8~mv2.jpg" alt="אחרי השלג — מיכאל שמידט" loading="lazy"><div class="artMeta"><strong>אחרי השלג</strong><span>חורף · שקט · מרחב</span></div></article><article class="artCard" data-index="4"><button class="saveBtn" aria-label="שמירת אור מעל הגליל" data-save="4">♡</button><img class="clickableArt" data-title="אור מעל הגליל" data-meta="אור · שמיים · צפון" src="https://static.wixstatic.com/media/646cc5_6ea0eb41950b4c72a0161970d48a8de8~mv2.jpg" alt="אור מעל הגליל — מיכאל שמידט" loading="lazy"><div class="artMeta"><strong>אור מעל הגליל</strong><span>אור · שמיים · צפון</span></div></article><article class="artCard" data-index="5"><button class="saveBtn" aria-label="שמירת שמש ישראלית" data-save="5">♡</button><img class="clickableArt" data-title="שמש ישראלית" data-meta="פריחה · טבע קרוב" src="https://static.wixstatic.com/media/646cc5_5d35b0b4b24b4090a5adeca5749d9fb2~mv2.jpg" alt="שמש ישראלית — מיכאל שמידט" loading="lazy"><div class="artMeta"><strong>שמש ישראלית</strong><span>פריחה · טבע קרוב</span></div></article><article class="artCard" data-index="6"><button class="saveBtn" aria-label="שמירת פנורמה" data-save="6">♡</button><img class="clickableArt" data-title="פנורמה" data-meta="ארץ · מרחב" src="https://static.wixstatic.com/media/646cc5_d6d0f230cdda4c47869322295a281cb0~mv2.jpg" alt="פנורמה — מיכאל שמידט" loading="lazy"><div class="artMeta"><strong>פנורמה</strong><span>ארץ · מרחב</span></div></article><article class="artCard" data-index="7"><button class="saveBtn" aria-label="שמירת גמלא" data-save="7">♡</button><img class="clickableArt" data-title="גמלא" data-meta="גולן · מצוק · שמיים" src="https://static.wixstatic.com/media/646cc5_6717da33d03b4f8f9c69a46ddfe5fcdc~mv2.jpg" alt="גמלא — מיכאל שמידט" loading="lazy"><div class="artMeta"><strong>גמלא</strong><span>גולן · מצוק · שמיים</span></div></article><article class="artCard" data-index="8"><button class="saveBtn" aria-label="שמירת החרמון במלוא הדרו" data-save="8">♡</button><img class="clickableArt" data-title="החרמון במלוא הדרו" data-meta="חרמון · חורף" src="https://static.wixstatic.com/media/646cc5_42650bd93c1c4a5699df4235ae768449~mv2.jpg" alt="החרמון במלוא הדרו — מיכאל שמידט" loading="lazy"><div class="artMeta"><strong>החרמון במלוא הדרו</strong><span>חרמון · חורף</span></div></article><article class="artCard" data-index="9"><button class="saveBtn" aria-label="שמירת סיפור סוסים" data-save="9">♡</button><img class="clickableArt" data-title="סיפור סוסים" data-meta="בעלי חיים · טבע" src="https://static.wixstatic.com/media/646cc5_9a6c1be42b934a519139db93c2d77a86~mv2.jpg" alt="סיפור סוסים — מיכאל שמידט" loading="lazy"><div class="artMeta"><strong>סיפור סוסים</strong><span>בעלי חיים · טבע</span></div></article><article class="artCard" data-index="10"><button class="saveBtn" aria-label="שמירת בית החלומות" data-save="10">♡</button><img class="clickableArt" data-title="בית החלומות" data-meta="לפלנד · חורף · מסע" src="https://static.wixstatic.com/media/646cc5_382bf681899b4b83a82d7ac7768c385a~mv2.jpg" alt="בית החלומות — מיכאל שמידט" loading="lazy"><div class="artMeta"><strong>בית החלומות</strong><span>לפלנד · חורף · מסע</span></div></article><article class="artCard" data-index="11"><button class="saveBtn" aria-label="שמירת שעת הזהב בכנרת" data-save="11">♡</button><img class="clickableArt" data-title="שעת הזהב בכנרת" data-meta="כנרת · אור · ערב" src="https://static.wixstatic.com/media/646cc5_6850bf4b38eb49859244e7c88123bd90~mv2.jpg" alt="שעת הזהב בכנרת — מיכאל שמידט" loading="lazy"><div class="artMeta"><strong>שעת הזהב בכנרת</strong><span>כנרת · אור · ערב</span></div></article><article class="artCard" data-index="12"><button class="saveBtn" aria-label="שמירת הכנרת מאירה" data-save="12">♡</button><img class="clickableArt" data-title="הכנרת מאירה" data-meta="כנרת · אור · מים" src="https://static.wixstatic.com/media/646cc5_e25510d84656404e95e14ca951fc023c~mv2.jpg" alt="הכנרת מאירה — מיכאל שמידט" loading="lazy"><div class="artMeta"><strong>הכנרת מאירה</strong><span>כנרת · אור · מים</span></div></article><article class="artCard" data-index="13"><button class="saveBtn" aria-label="שמירת קשת ברמה" data-save="13">♡</button><img class="clickableArt" data-title="קשת ברמה" data-meta="גולן · חורף · קשת" src="https://static.wixstatic.com/media/646cc5_d256fadd40a04d5a8cf3beeba7848936~mv2.jpg" alt="קשת ברמה — מיכאל שמידט" loading="lazy"><div class="artMeta"><strong>קשת ברמה</strong><span>גולן · חורף · קשת</span></div></article><article class="artCard" data-index="14"><button class="saveBtn" aria-label="שמירת שם הרי גולן" data-save="14">♡</button><img class="clickableArt" data-title="שם הרי גולן" data-meta="גולן · ארץ · אור" src="https://static.wixstatic.com/media/646cc5_d720bd48e7e7459c80f35ec11b000e2c~mv2.jpg" alt="שם הרי גולן — מיכאל שמידט" loading="lazy"><div class="artMeta"><strong>שם הרי גולן</strong><span>גולן · ארץ · אור</span></div></article><article class="artCard" data-index="15"><button class="saveBtn" aria-label="שמירת ירושלים של זהב" data-save="15">♡</button><img class="clickableArt" data-title="ירושלים של זהב" data-meta="ירושלים · אבן · אור" src="https://static.wixstatic.com/media/646cc5_e4c74d9f48944acdba34278e2724fca5~mv2.jpg" alt="ירושלים של זהב — מיכאל שמידט" loading="lazy"><div class="artMeta"><strong>ירושלים של זהב</strong><span>ירושלים · אבן · אור</span></div></article><article class="artCard" data-index="16"><button class="saveBtn" aria-label="שמירת שלכת בגולן" data-save="16">♡</button><img class="clickableArt" data-title="שלכת בגולן" data-meta="גולן · שלכת · צבע" src="https://static.wixstatic.com/media/646cc5_9d7f11f6ffc246c9b3fe3dc3110613ed~mv2.jpg" alt="שלכת בגולן — מיכאל שמידט" loading="lazy"><div class="artMeta"><strong>שלכת בגולן</strong><span>גולן · שלכת · צבע</span></div></article></div></div></section>
 
-<section>
-  <div class="wrap reveal">
-    <div class="eyebrow">THE LANGUAGE</div>
-    <h2 class="title">שקט · פרא · אור</h2>
-    <div class="grid3">
-      <div class="a"><img class="clickableArt" data-title="אחרי השלג" data-meta="חורף · שקט · מרחב" src="https://static.wixstatic.com/media/646cc5_cc7e282b3d6b4d22a645a41418dafbc8~mv2.jpg" alt="אחרי השלג"><div class="cap">שקט — אחרי השלג</div></div>
-      <div class="b"><img class="clickableArt" data-title="שקט על החוף" data-meta="מים · מרחב · נשימה" src="https://static.wixstatic.com/media/646cc5_89146b682a6841cebafd7c15612097b0~mv2.jpg" alt="שקט על החוף"><div class="cap">מרחב — שקט על החוף</div></div>
-      <div class="c"><img class="clickableArt" data-title="קציר זהוב" data-meta="אדמה · אור · זהב" src="https://static.wixstatic.com/media/646cc5_d760ae6b12e043d583db3d869bfd99b1~mv2.jpg" alt="קציר זהוב"><div class="cap">אדמה — קציר זהוב</div></div>
-    </div>
-  </div>
-</section>
+<section id="collections" class="collections"><div class="wrap"><div class="eyebrow">CURATED WORLDS</div><h2 class="title">לא אלבומים. עולמות.</h2><p class="lead">האוסף קובע את הקצב, לא רק את הנושא. התערוכות יכולות להתחלף בלי להחליף את הזהות.</p><div class="collectionRail"><div class="collectionCard"><small>01</small><h3>מים ואור</h3><p>כנרת, בניאס, השתקפות, תנועה ונשימה.</p></div><div class="collectionCard"><small>02</small><h3>נשימה בגולן</h3><p>שלג, שלכת, גמלא, חרמון, אדמה ורוח.</p></div><div class="collectionCard"><small>03</small><h3>אור ואדמה</h3><p>שדות, זהב, חקלאות והרגע האחרון של היום.</p></div><div class="collectionCard"><small>04</small><h3>מעבר לגולן</h3><p>ירושלים, לפלנד, בעלי חיים והמסעות שנכנסו לארכיון.</p></div></div></div></section>
 
-<section class="manifesto">
-  <div class="wrap manifestoGrid reveal">
-    <div>
-      <div class="eyebrow" style="color:#958d82">BRAND CORE</div>
-      <h2 class="title">הצילום הוא הדלת.<br>האמנות היא הבית.</h2>
-    </div>
-    <div>
-      <p>מיכאל שמידט הוא המותג. הצילום, המוזיקה, המילים, הסרטים, ההדפסים והמהדורות הם זרועות של אותו בית — לא עולמות נפרדים.</p>
-      <p>לכן אנחנו לא בונים עוד “אתר צילום”. אנחנו בונים מקום שאפשר להיכנס אליו, לעצור, להרגיש, לגלות עוד שכבה — ורק אחר כך לבחור אם לקחת משהו הביתה.</p>
-    </div>
-  </div>
-</section>
+<section id="rooms" class="roomSection"><div class="wrap roomGrid"><div><div class="eyebrow">ROOM PREVIEW</div><h2 class="title">לראות לפני שמחליטים.</h2><p class="lead">היצירה עצמה נשארת נקייה. כאן אפשר לשנות את הסביבה — לא את הצילום.</p><div class="roomControls"><button class="roomBtn active" data-room="warm">קיר חם</button><button class="roomBtn" data-room="stone">אבן בהירה</button><button class="roomBtn" data-room="dark">חלל כהה</button><button class="roomBtn" data-room="hotel">אירוח / מלון</button></div></div><div><div class="roomScene" id="roomScene"><div class="roomArt"><img id="roomImage" src="https://static.wixstatic.com/media/646cc5_d760ae6b12e043d583db3d869bfd99b1~mv2.jpg" alt="קציר זהוב — הדמיית חלל"></div></div><div class="roomCaption">המחשה בלבד · היחס המקורי נשמר · מידות אמיתיות ייכנסו לאחר אימות ייצור</div></div></div></section>
 
-<section id="collections" class="seasons">
-  <div class="wrap seasonGrid reveal">
-    <div>
-      <div class="eyebrow">SEASONS OF MOMENTS</div>
-      <h2 class="title">עונות של רגעים.</h2>
-      <p class="lead">התערוכות מתחלפות. הלב נשאר.</p>
-      <div class="seasonList">
-        <div class="season"><b>מים ואור</b><span>כנרת, השתקפות, שקט ותנועה.</span></div>
-        <div class="season"><b>נשימה בגולן</b><span>אדמה, שמיים, שלג ושלכת.</span></div>
-        <div class="season"><b>ירושלים</b><span>אבן עתיקה וזהב של ערב.</span></div>
-        <div class="season"><b>עונות</b><span>אותה הארץ. אף פעם לא אותו רגע.</span></div>
-      </div>
-    </div>
-    <div class="thumbPair">
-      <img src="https://static.wixstatic.com/media/646cc5_89146b682a6841cebafd7c15612097b0~mv2.jpg" alt="שקט על החוף — מיכאל שמידט">
-      <img src="https://static.wixstatic.com/media/646cc5_cc7e282b3d6b4d22a645a41418dafbc8~mv2.jpg" alt="אחרי השלג — מיכאל שמידט">
-    </div>
-  </div>
-</section>
+<section class="immersive"><div class="wrap immersiveGrid"><div><div class="eyebrow">LIVING GALLERY · MOTION BETA</div><h2 class="title">הטלפון נהיה חלון לגלריה.</h2><p class="lead">במקום autoplay, המשתמש מפעיל תנועה מרצונו. הטיה עדינה של הטלפון או גרירה עם האצבע מזיזות את הקיר. אם לא רוצים תנועה — הכול נשאר סטטי ונגיש.</p><button class="gyroBtn" id="gyroBtn">להפעיל תנועה עדינה</button></div><div class="gyroViewport" id="gyroViewport"><div class="gyroRail" id="gyroRail"><figure><img src="https://static.wixstatic.com/media/646cc5_cc7e282b3d6b4d22a645a41418dafbc8~mv2.jpg" alt="אחרי השלג"></figure><figure><img src="https://static.wixstatic.com/media/646cc5_6850bf4b38eb49859244e7c88123bd90~mv2.jpg" alt="שעת הזהב בכנרת"></figure><figure><img src="https://static.wixstatic.com/media/646cc5_d720bd48e7e7459c80f35ec11b000e2c~mv2.jpg" alt="שם הרי גולן"></figure><figure><img src="https://static.wixstatic.com/media/646cc5_9d7f11f6ffc246c9b3fe3dc3110613ed~mv2.jpg" alt="שלכת בגולן"></figure><figure><img src="https://static.wixstatic.com/media/646cc5_5d35b0b4b24b4090a5adeca5749d9fb2~mv2.jpg" alt="שמש ישראלית"></figure></div></div></div></section>
 
+<section id="tools" class="toolLab"><div class="wrap toolGrid"><div><div class="eyebrow">THE TOOL LAB</div><h2 class="title">האתר צריך לעשות דברים.</h2><p class="lead">לא עוד דף יפה. אלה הכלים שאנחנו מחברים לבית האמן — אחד אחד, רק כשהם מוסיפים ערך אמיתי.</p><div class="toolButtons"><button class="toolBtn active" data-tool="wall"><strong>Visualizer לחלל</strong><span>יצירה → קיר → מידה → גימור</span></button><button class="toolBtn" data-tool="collector"><strong>Collector / שמירה והשוואה</strong><span>לב → shortlist → Private View</span></button><button class="toolBtn" data-tool="interiors"><strong>Interiors / מלונות</strong><span>6 / 12 / 30 עבודות מאוצרות</span></button><button class="toolBtn" data-tool="license"><strong>Licensing</strong><span>פנייה כתובה פשוטה לפי שימוש</span></button><button class="toolBtn" data-tool="story"><strong>Stories + Music</strong><span>צילום → סיפור → שיר / QR</span></button><button class="toolBtn" data-tool="book"><strong>ספר אמן</strong><span>“לעצור את הרגע” · צילום + טקסט + מוזיקה</span></button></div></div><div class="toolPane"><h3 id="toolTitle">Visualizer לחלל</h3><p id="toolText">הלקוח פותח יצירה, בוחר חלל, יחס וגימור ורואה אותה לפני החלטה. כל שינוי הוא שכבת המחשה; המקור לא נחתך.</p><div class="toolFlow" id="toolFlow"><div class="toolStep"><small>01</small>יצירה</div><div class="toolStep"><small>02</small>חלל</div><div class="toolStep"><small>03</small>מידה / חומר</div><div class="toolStep"><small>04</small>פנייה</div></div></div></div></section>
 
-<section class="atlas">
-  <div class="wrap reveal">
-    <div class="atlasHead">
-      <div>
-        <div class="eyebrow" style="color:#918a80">ATLAS OF LIGHT</div>
-        <h2 class="title">אותה ארץ.<br>אור אחר.</h2>
-      </div>
-      <p class="lead">לא עוד קיר של תמונות. רצף של רגעים — מים, אדמה, חורף ואור — שכל אחד מהם מקבל מרחב לנשום.</p>
-    </div>
-    <div class="atlasRail">
-      <div class="atlasShot"><img src="https://static.wixstatic.com/media/646cc5_89146b682a6841cebafd7c15612097b0~mv2.jpg" alt="שקט על החוף — מיכאל שמידט"><span class="atlasTag">מים</span></div>
-      <div class="atlasShot"><img src="https://static.wixstatic.com/media/646cc5_77aee53dafce44a79228f628f2214001~mv2.jpg" alt="זרימה נצחית — הבניאס — מיכאל שמידט"><span class="atlasTag">זרימה</span></div>
-      <div class="atlasShot"><img src="https://static.wixstatic.com/media/646cc5_d760ae6b12e043d583db3d869bfd99b1~mv2.jpg" alt="קציר זהוב — מיכאל שמידט"><span class="atlasTag">אדמה</span></div>
-      <div class="atlasShot"><img src="https://static.wixstatic.com/media/646cc5_cc7e282b3d6b4d22a645a41418dafbc8~mv2.jpg" alt="אחרי השלג — מיכאל שמידט"><span class="atlasTag">חורף</span></div>
-      <div class="atlasShot"><img src="https://static.wixstatic.com/media/646cc5_6ea0eb41950b4c72a0161970d48a8de8~mv2.jpg" alt="אור מעל הגליל — מיכאל שמידט"><span class="atlasTag">אור</span></div>
-    </div>
-  </div>
-</section>
+<section><div class="wrap"><div class="eyebrow">THE HOUSE</div><h2 class="title">כל הבית, לא רק דף הבית.</h2><div class="paths"><a class="path" href="#gallery"><strong>Gallery</strong><span>ארכיון, עבודות עוגן ותערוכות.</span></a><div class="path"><strong>Fine Art</strong><span>הדפסים, מהדורות, חומרים ותעודות.</span></div><div class="path"><strong>Interiors</strong><span>בתים, מלונות, צימרים ומשרדים.</span></div><div class="path"><strong>Licensing</strong><span>שימוש מסחרי ותוכן.</span></div><div class="path"><strong>Music</strong><span>שירים כחלק מאותו עולם יצירה.</span></div><div class="path"><strong>Stories</strong><span>מאחורי הפריים, בלי להמציא.</span></div><div class="path"><strong>Collector</strong><span>שמירה, השוואה ו-Private View.</span></div><div class="path"><strong>About</strong><span>האדם והדרך, בלי להפוך חיים לשיווק.</span></div></div></div></section>
 
-<section>
-  <div class="wrap roomTeaser reveal">
-    <div class="roomFrame">
-      <div class="roomWall">
-        <div class="roomArt"><img src="https://static.wixstatic.com/media/646cc5_d760ae6b12e043d583db3d869bfd99b1~mv2.jpg" alt="קציר זהוב בחלל — תצוגת המחשה"></div>
-      </div>
-      <div class="roomHint">המחשה בלבד · Room Preview בפיתוח</div>
-    </div>
-    <div>
-      <div class="eyebrow">ON YOUR WALL</div>
-      <h2 class="title">איך זה ירגיש אצלכם בבית?</h2>
-      <p class="lead">קודם היצירה. אחר כך הקיר. בהמשך אפשר יהיה לבחור מידה וחלל, ולראות לפני שמחליטים — בלי להפוך את האתר לחנות צעקנית.</p>
-      <a class="cta" href="#contact">לדבר על יצירה ←</a>
-    </div>
-  </div>
-</section>
+<section id="about"><div class="wrap about"><div><div class="eyebrow">ABOUT</div><h2 class="title">אני מיכאל.</h2></div><p>אני אמן מהגולן. שנים הסתכלתי על העולם דרך מצלמה. עם הזמן הבנתי שהצילום הוא לא כל הסיפור — הוא אחת השפות שלי. אני נמשך לאור, לאדמה, למים, לחורף, לשקט ולרגעים שאי אפשר לביים. היום כל מה שנוצר — צילום, מוזיקה, מילים וסרטים — מקבל בית אחד.</p></div></section>
 
-
-<section class="liveGallery" id="living-gallery">
-  <div class="wrap liveGalleryGrid reveal">
-    <div>
-      <div class="eyebrow">THE LIVING GALLERY</div>
-      <h2 class="title">לא עוד גלריה אחת.</h2>
-      <p class="lead">בוחרים עולם — והקיר משתנה. בלי להעמיס את כל הארכיון בבת אחת.</p>
-      <div class="liveControls" role="tablist" aria-label="בחירת תערוכה">
-        <button class="liveBtn active" data-set="water" role="tab" aria-selected="true"><strong>מים ואור</strong><span>שקט, זרימה והשתקפות</span></button>
-        <button class="liveBtn" data-set="golan" role="tab" aria-selected="false"><strong>נשימה בגולן</strong><span>אדמה, חורף ומרחב</span></button>
-        <button class="liveBtn" data-set="light" role="tab" aria-selected="false"><strong>אור ואדמה</strong><span>שדות, זהב ורגע אחרון של יום</span></button>
-      </div>
-      <div class="liveMeta">תצוגת אב־טיפוס · שליטה ידנית · בלי autoplay</div>
-    </div>
-    <div>
-      <div class="liveStage" aria-live="polite">
-        <figure><img id="lg1" src="https://static.wixstatic.com/media/646cc5_89146b682a6841cebafd7c15612097b0~mv2.jpg" alt="שקט על החוף — מיכאל שמידט"><figcaption class="liveCaption" id="lc1">שקט על החוף</figcaption></figure>
-        <figure><img id="lg2" src="https://static.wixstatic.com/media/646cc5_77aee53dafce44a79228f628f2214001~mv2.jpg" alt="זרימה נצחית — הבניאס — מיכאל שמידט"><figcaption class="liveCaption" id="lc2">זרימה נצחית — הבניאס</figcaption></figure>
-        <figure><img id="lg3" src="https://static.wixstatic.com/media/646cc5_6ea0eb41950b4c72a0161970d48a8de8~mv2.jpg" alt="אור מעל הגליל — מיכאל שמידט"><figcaption class="liveCaption" id="lc3">אור מעל הגליל</figcaption></figure>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<section class="originalWorlds">
-  <div class="wrap reveal">
-    <div class="originalHead">
-      <div>
-        <div class="eyebrow">CLEAN SOURCE · ORIGINAL FRAME</div>
-        <h2 class="title">התמונה לא מתיישרת לעיצוב.<br>העיצוב מתיישר אליה.</h2>
-      </div>
-      <p class="lead">בגלריה הראשית כל יצירה נשארת ביחס המקורי שלה. מאקרו, קרני אור, טבע קרוב ומינימליזם נכנסים רק אחרי שיש לנו נגזרת Web נקייה מהמקור — בלי Watermark ישן ובלי חיתוך כפוי.</p>
-    </div>
-    <div class="worlds">
-      <div class="world"><small>NEXT CURATION</small><strong>מאקרו טבע</strong><p>טיפות, פרחים ופרטים קטנים. נפתח כשיש קובץ נקי מהמקור.</p></div>
-      <div class="world"><small>NEXT CURATION</small><strong>קרני אור</strong><p>שמש, עננים ואור שחוצה את הנוף. בלי preview ישן בחזית.</p></div>
-      <div class="world"><small>NEXT CURATION</small><strong>מינימליסטי</strong><p>מעט אלמנטים, הרבה נשימה, יחס מקורי.</p></div>
-      <div class="world"><small>NEXT CURATION</small><strong>טבע קרוב</strong><p>עלה, פרח, גזע ומרקם — כשהיצירה עצמה מובילה את העיצוב.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="exhibitionStage">
-  <div class="wrap reveal">
-    <div class="eyebrow">CURATED ROOMS</div>
-    <h2 class="title">אותו בית. שלושה חדרים.</h2>
-    <p class="lead">לא רק החלפת תמונות — לכל תערוכה יש קצב, חומריות ואור משלה. המעבר ביניהן משנה את האווירה, אבל לא את הזהות.</p>
-    <div class="exhibitionControls" role="tablist" aria-label="בחירת חדר תערוכה">
-      <button class="exhibitionControl active" data-room="water">מים ואור</button>
-      <button class="exhibitionControl" data-room="golan">נשימה בגולן</button>
-      <button class="exhibitionControl" data-room="light">אור ואדמה</button>
-    </div>
-    <div class="exhibitionShell" style="margin-top:22px">
-      <div class="exhibitionMood" id="exhibitionMood" data-mood="water">
-        <div class="exhibitionLead">
-          <div class="eyebrow" id="roomKicker">ROOM 01 · WATER & LIGHT</div>
-          <h3 id="roomTitle">מים ואור</h3>
-          <p id="roomText">מרחב קריר־רך, הרבה נשימה ותנועה עדינה. התמונה נשארת שלמה; החדר רק נותן לה שקט.</p>
-          <div class="exhibitionRule">אין autoplay. אין crop אוטומטי. אין שינוי צבע על הצילום עצמו.</div>
-        </div>
-        <div class="exhibitionWall">
-          <figure><img id="roomImg1" src="https://static.wixstatic.com/media/646cc5_89146b682a6841cebafd7c15612097b0~mv2.jpg" alt="שקט על החוף — מיכאל שמידט"><figcaption id="roomCap1">שקט על החוף</figcaption></figure>
-          <figure><img id="roomImg2" src="https://static.wixstatic.com/media/646cc5_77aee53dafce44a79228f628f2214001~mv2.jpg" alt="זרימה נצחית — הבניאס — מיכאל שמידט"><figcaption id="roomCap2">זרימה נצחית — הבניאס</figcaption></figure>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="moment" class="moment">
-  <div class="wrap momentGrid reveal">
-    <img src="https://static.wixstatic.com/media/646cc5_6ea0eb41950b4c72a0161970d48a8de8~mv2.jpg" alt="אור מעל הגליל">
-    <div>
-      <div class="eyebrow" style="color:#968d80">THE MOMENT</div>
-      <div class="quote">העולם ממשיך לזוז.<br>הרגע נשאר.</div>
-      <p>האור משתנה, המים זורמים, השלג נמס. אני רק מחפש את השנייה שבה הכול מתחבר.</p>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap finder reveal">
-    <div>
-      <div class="eyebrow">FIND YOUR WORK</div>
-      <h2 class="title">מה בא לכם לראות?</h2>
-      <p class="lead">אפשר להתחיל ממקום, מצבע, מאור או פשוט מתחושה.</p>
-    </div>
-    <div class="chips">
-      <span class="chip">הגולן</span><span class="chip">הכנרת</span><span class="chip">ירושלים</span><span class="chip">מים</span><span class="chip">חורף</span><span class="chip">שדות</span><span class="chip">מסעות</span><span class="chip">אור</span><span class="chip">שקט</span><span class="chip">פרא</span>
-    </div>
-  </div>
-</section>
-
-<section id="house" class="artistHouse">
-  <div class="wrap houseGrid reveal">
-    <div>
-      <div class="eyebrow">ARTIST HOUSE</div>
-      <h2 class="title">בית אחד.<br>כמה דרכים להיכנס.</h2>
-      <p class="lead">האתר נבנה כדי שכל מה שכבר נוצר יוכל לחיות יחד — בלי להפוך אותך למנהל של עשרה ערוצים.</p>
-    </div>
-    <div class="houseList">
-      <div class="houseItem"><strong>Gallery</strong><span>עבודות עוגן וגלריות מאוצרות.</span></div>
-      <div class="houseItem"><strong>Collections</strong><span>סדרות ועונות של רגעים.</span></div>
-      <div class="houseItem"><strong>The Moment</strong><span>היצירה לפני ההסבר.</span></div>
-      <div class="houseItem"><strong>Stories</strong><span>הסיפור מאחורי חלק מהפריימים.</span></div>
-      <div class="houseItem"><strong>Music</strong><span>שירים ויצירה קולית כחלק מאותו עולם.</span></div>
-      <div class="houseItem"><strong>Licensing</strong><span>רישוי שימושים לצילומים מאומתים בלבד.</span></div>
-      <div class="houseItem"><strong>Interiors</strong><span>אוצרות לחללים, מלונות ובתי אירוח.</span></div>
-      <div class="houseItem"><strong>Collector</strong><span>Fine Art, מהדורות ואוספים — רק אחרי אימות ייצור ועלויות.</span></div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap reveal">
-    <div class="eyebrow">THREE WAYS IN</div>
-    <h2 class="title">לאן ממשיכים מכאן?</h2>
-    <div class="paths">
-      <a class="path" href="#works"><strong>לראות</strong><span>גלריות, סדרות והארכיון.</span></a>
-      <a class="path" href="#story"><strong>להכיר</strong><span>את האדם, הדרך והיצירה.</span></a>
-      <a class="path" href="#contact"><strong>לקחת הביתה</strong><span>Fine Art והתאמה לחלל — בלי לחץ.</span></a>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap recognition reveal">
-    <div>
-      <div class="eyebrow">RECOGNITION</div>
-      <h2 class="title">העבודות יצאו מהמסך.</h2>
-    </div>
-    <div>
-      <div class="fact"><strong>תערוכות בינלאומיות</strong><span>רק תערוכות והישגים שיש להם מקור אימות נכנסים לכאן.</span></div>
-      <div class="fact"><strong>ארכיון חי</strong><span>שנים של צילום מתחברות למערכת אחת של מקום, נושא, סיפור וזכויות.</span></div>
-      <div class="fact"><strong>Fine Art לחללים</strong><span>הכיוון: התאמה לקיר, מידה, חומר ומסגור לפני החלטה.</span></div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap reveal">
-    <div class="eyebrow">FINE ART FLOW</div>
-    <h2 class="title">אם זה נשאר איתכם — אפשר לקחת הביתה.</h2>
-    <p class="lead">לא מתחילים במחיר. מתחילים ביצירה, ורק אחר כך בודקים איך היא מתיישבת אצלכם.</p>
-    <div class="process">
-      <div class="step"><div class="num">01</div><strong>בוחרים</strong><p>יצירה אחת, צמד או סדרה.</p></div>
-      <div class="step"><div class="num">02</div><strong>רואים בחלל</strong><p>קיר, יחס ומידה לפני החלטה.</p></div>
-      <div class="step"><div class="num">03</div><strong>מתאימים</strong><p>חומר, מסגור ומהדורה — רק אחרי אימות.</p></div>
-      <div class="step"><div class="num">04</div><strong>ממשיכים</strong><p>ייעוץ כתוב ופשוט. בלי לחץ.</p></div>
-    </div>
-  </div>
-</section>
-
-<section id="progress" class="progress">
-  <div class="wrap progressGrid reveal">
-    <div>
-      <div class="eyebrow">BUILDING LIVE</div>
-      <h2 class="title">מה כבר נבנה.</h2>
-      <p class="lead">זה קישור תצוגת ההתקדמות שאפשר לשתף. הוא מתעדכן ככל שאנחנו סוגרים שכבות אמיתיות.</p>
-    </div>
-    <div class="progressCards">
-      <div class="pcard"><div class="state">ACTIVE</div><strong>תערוכות מתחלפות</strong><p>4 עולמות מאוצרים כבר קיימים במנוע ה-Wix.</p></div>
-      <div class="pcard"><div class="state">ACTIVE</div><strong>רגעי WOW</strong><p>שכבת חוויה חדשה: עצירה, סיפור, גלריה חיה וקיר.</p></div>
-      <div class="pcard"><div class="state">ACTIVE</div><strong>חדרי תערוכה</strong><p>3 שפות חלל שונות: מים ואור, נשימה בגולן, אור ואדמה — בלי לחתוך את היצירות.</p></div>
-      <div class="pcard"><div class="state">ACTIVE</div><strong>Artwork Studio</strong><p>יצירה בודדת, חלל, גימורים, חלוקה לפאנלים וסיפור — לפני מסחר.</p></div>
-      <div class="pcard"><div class="state">SAFE GATE</div><strong>תמונות בלבד</strong><p>רק מקור מאומת נכנס לחזית. אין AI, אין סטוק, אין “דומה לשלך”.</p></div>
-      <div class="pcard"><div class="state">NO PUBLISH</div><strong>האתר הקנוני מוגן</strong><p>העבודה מתקדמת ב-Draft/מערכות. אין Publish בלי אישור מפורש.</p></div>
-    </div>
-  </div>
-</section>
-
-<section id="story">
-  <div class="wrap about reveal">
-    <div>
-      <div class="eyebrow">ABOUT</div>
-      <h2 class="title">אני מיכאל.</h2>
-    </div>
-    <p>אני אמן מהגולן. שנים הסתכלתי על העולם דרך מצלמה. עם הזמן הבנתי שהצילום הוא לא כל הסיפור — הוא פשוט אחת השפות שלי. אני נמשך לאור, לאדמה, למים, לחורף, לשקט ולרגעים שאי אפשר לביים. לא מעניין אותי להפוך את הארץ ליפה יותר ממה שהיא. מעניין אותי לתפוס אותה כשהיא פשוט היא.</p>
-  </div>
-</section>
-
-<section id="contact">
-  <div class="wrap contact reveal">
-    <div class="big">נדבר?</div>
-    <div>
-      <p class="lead">ראיתם עבודה שנשארה איתכם? רוצים לחשוב על קיר, חלל או פרויקט? כתבו לי.</p>
-      <a class="cta" href="mailto:michael.s7482@gmail.com">לכתוב לי ←</a>
-    </div>
-  </div>
-</section>
+<section id="contact" class="contact"><div class="wrap"><div class="eyebrow">CONTACT</div><h2 class="title">ראיתם משהו שנשאר איתכם?</h2><p class="lead">אפשר לדבר על יצירה, חלל, סדרה, רישוי או פרויקט. בלי checkout צעקני ובלי לחץ.</p><a class="cta" href="mailto:michael.s7482@gmail.com">לכתוב לי ←</a></div></section>
 </main>
 
-<div class="focusView" id="focusView" aria-hidden="true">
-  <div class="focusImagePane"><img id="focusImg" alt=""></div>
-  <aside class="focusPanel">
-    <div>
-      <button class="focusClose" id="focusClose" aria-label="סגירה">×</button>
-      <div class="focusEyebrow">PREMIUM GALLERY SYSTEM</div>
-      <div class="focusTitle" id="focusTitle"></div>
-      <div class="focusMeta" id="focusMeta"></div>
-      <div class="focusActions" role="tablist" aria-label="אפשרויות ליצירה">
-        <button class="focusAction" type="button" data-pane="wall">לראות על הקיר</button>
-        <button class="focusAction" type="button" data-pane="variants">וריאציות וגימורים</button>
-        <button class="focusAction" type="button" data-pane="story">הסיפור של הרגע</button>
-      </div>
-      <div class="studioPane" id="pane-wall">
-        <div class="wallScene" id="wallScene"><div class="wallArtFrame"><img id="wallImg" alt=""></div></div>
-        <div class="studioLabel">חלל</div>
-        <div class="optionRow">
-          <button class="optionChip active" data-wall="warm">קיר חם</button>
-          <button class="optionChip" data-wall="stone">אבן בהירה</button>
-          <button class="optionChip" data-wall="dark">חלל כהה</button>
-        </div>
-        <div class="studioLabel">תצוגת המחשה · היחס המקורי נשמר</div>
-      </div>
-      <div class="studioPane" id="pane-variants">
-        <div class="studioLabel">תצורה</div>
-        <div class="optionRow">
-          <button class="optionChip active" data-layout="single">יצירה אחת</button>
-          <button class="optionChip" data-layout="triptych">שלושה חלקים</button>
-        </div>
-        <div class="studioLabel">גימור</div>
-        <div class="optionRow">
-          <button class="optionChip active" data-finish="Fine Art Paper">Fine Art Paper</button>
-          <button class="optionChip" data-finish="Canvas">קנבס</button>
-          <button class="optionChip" data-finish="Acrylic">אקריליק</button>
-          <button class="optionChip" data-finish="Framed">מסגור</button>
-        </div>
-        <div class="finishPreview"><strong id="finishTitle">Fine Art Paper</strong><span id="finishText">מראה שקט ומדויק. לפני מכירה אמיתית נוודא ספק, חומר, מידות ועלויות.</span></div>
-        <div class="splitPreview" id="splitPreview" hidden><div></div><div></div><div></div></div>
-        <div class="studioHint">ההמחשות כאן הן כלי בחירה בלבד. קובץ המקור לא נחתך ולא משתנה.</div>
-      </div>
-      <div class="studioPane" id="pane-story">
-        <div class="storyPaneText"><em>מאחורי הפריים</em><br>כאן יופיע רק סיפור שאומת ממקור או ממיכאל. אם אין סיפור אמיתי — לא ממציאים אחד.</div>
-      </div>
-      <div class="focusNote">אין עדיין מחיר או checkout — קודם היצירה, אחר כך התאמה, ורק אחרי אימות ייצור ועלויות עוברים למכירה.</div>
-    </div>
-    <div class="focusNote">© מיכאל שמידט · תצוגת Web</div>
-  </aside>
-</div>
+<div class="savedDock" id="savedDock">נשמרו <b id="savedDockCount">0</b> עבודות</div>
 
-<footer>
-  <div class="wrap foot">
-    <div><strong>מיכאל שמידט</strong><div class="note">תצוגת התקדמות · קפיצת עיצוב: PREMIUM GALLERY SYSTEM · מתעדכנת תוך כדי בנייה · לא האתר הסופי</div></div>
-    <div class="note">© מיכאל שמידט · כל הזכויות שמורות</div>
-  </div>
-</footer>
+<div class="focusView" id="focusView" aria-hidden="true"><div class="focusImagePane"><img id="focusImg" alt=""></div><aside class="focusPanel"><button class="focusClose" id="focusClose" aria-label="סגירה">×</button><div class="eyebrow" style="margin-top:24px">ARTWORK VIEW</div><div class="focusTitle" id="focusTitle"></div><div class="focusMeta" id="focusMeta"></div><div class="focusActions"><button class="focusAction" data-pane="wall">לראות על הקיר</button><button class="focusAction" data-pane="finish">וריאציות וגימורים</button><button class="focusAction" data-pane="story">הסיפור של הרגע</button></div><div class="studioPane" id="pane-wall"><p>היצירה עוברת להמחשת חלל. בהמשך נחבר גודל אמיתי, יחס לקיר ותצוגת חדר אישית — בלי לשנות את המקור.</p></div><div class="studioPane" id="pane-finish"><p>Fine Art Paper / קנבס / אקריליק / מסגור / פאנלים. האפשרויות יוצגו רק אחרי אימות ספק, חומר ומידות.</p></div><div class="studioPane" id="pane-story"><p>כאן נכנס רק סיפור אמיתי שאומת ממקור או ממיכאל. אם אין סיפור — משאירים את היצירה לדבר.</p></div></aside></div>
+
+<footer><div class="wrap foot"><a class="footLogo" href="#top"><img src="data:image/webp;base64,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" alt="מיכאל שמידט"></a><div><div>© מיכאל שמידט · כל הזכויות שמורות</div><div style="font-size:.72rem;color:#777168;margin-top:6px">Premium full-site progress preview · לא האתר הקנוני ולא Publish</div></div></div></footer>
 
 <script>
-const gallerySets={
- water:[
-  ["https://static.wixstatic.com/media/646cc5_89146b682a6841cebafd7c15612097b0~mv2.jpg","שקט על החוף"],
-  ["https://static.wixstatic.com/media/646cc5_77aee53dafce44a79228f628f2214001~mv2.jpg","זרימה נצחית — הבניאס"],
-  ["https://static.wixstatic.com/media/646cc5_6ea0eb41950b4c72a0161970d48a8de8~mv2.jpg","אור מעל הגליל"]
- ],
- golan:[
-  ["https://static.wixstatic.com/media/646cc5_cc7e282b3d6b4d22a645a41418dafbc8~mv2.jpg","אחרי השלג"],
-  ["https://static.wixstatic.com/media/646cc5_d760ae6b12e043d583db3d869bfd99b1~mv2.jpg","קציר זהוב"],
-  ["https://static.wixstatic.com/media/646cc5_6ea0eb41950b4c72a0161970d48a8de8~mv2.jpg","אור מעל הגליל"]
- ],
- light:[
-  ["https://static.wixstatic.com/media/646cc5_d760ae6b12e043d583db3d869bfd99b1~mv2.jpg","קציר זהוב"],
-  ["https://static.wixstatic.com/media/646cc5_6ea0eb41950b4c72a0161970d48a8de8~mv2.jpg","אור מעל הגליל"],
-  ["https://static.wixstatic.com/media/646cc5_89146b682a6841cebafd7c15612097b0~mv2.jpg","שקט על החוף"]
- ]
-};
-document.querySelectorAll('.liveBtn').forEach(btn=>btn.addEventListener('click',()=>{
- document.querySelectorAll('.liveBtn').forEach(b=>{b.classList.remove('active');b.setAttribute('aria-selected','false')});
- btn.classList.add('active');btn.setAttribute('aria-selected','true');
- const set=gallerySets[btn.dataset.set];
- set.forEach((it,i)=>{const img=document.getElementById('lg'+(i+1));const cap=document.getElementById('lc'+(i+1));img.style.opacity='.15';setTimeout(()=>{img.src=it[0];img.alt=it[1]+' — מיכאל שמידט';cap.textContent=it[1];img.style.opacity='1'},130)});
-}));
-const roomSets={
- water:{
-  kicker:"ROOM 01 · WATER & LIGHT",title:"מים ואור",
-  text:"מרחב קריר־רך, הרבה נשימה ותנועה עדינה. התמונה נשארת שלמה; החדר רק נותן לה שקט.",
-  imgs:[
-   ["https://static.wixstatic.com/media/646cc5_89146b682a6841cebafd7c15612097b0~mv2.jpg","שקט על החוף"],
-   ["https://static.wixstatic.com/media/646cc5_77aee53dafce44a79228f628f2214001~mv2.jpg","זרימה נצחית — הבניאס"]
-  ]
- },
- golan:{
-  kicker:"ROOM 02 · GOLAN BREATH",title:"נשימה בגולן",
-  text:"נייר חם, אבן, אדמה וחורף. פחות קישוט, יותר מקום לרוח ולשקט.",
-  imgs:[
-   ["https://static.wixstatic.com/media/646cc5_cc7e282b3d6b4d22a645a41418dafbc8~mv2.jpg","אחרי השלג"],
-   ["https://static.wixstatic.com/media/646cc5_6ea0eb41950b4c72a0161970d48a8de8~mv2.jpg","אור מעל הגליל"]
-  ]
- },
- light:{
-  kicker:"ROOM 03 · EARTH & LIGHT",title:"אור ואדמה",
-  text:"חום עדין של סוף יום, שדות וזהב טבעי — בלי להפוך את הצילום לכתום או רווי מדי.",
-  imgs:[
-   ["https://static.wixstatic.com/media/646cc5_d760ae6b12e043d583db3d869bfd99b1~mv2.jpg","קציר זהוב"],
-   ["https://static.wixstatic.com/media/646cc5_6ea0eb41950b4c72a0161970d48a8de8~mv2.jpg","אור מעל הגליל"]
-  ]
- }
-};
-document.querySelectorAll('.exhibitionControl').forEach(btn=>btn.addEventListener('click',()=>{
- document.querySelectorAll('.exhibitionControl').forEach(b=>b.classList.remove('active'));btn.classList.add('active');
- const r=roomSets[btn.dataset.room]; const mood=document.getElementById('exhibitionMood'); mood.dataset.mood=btn.dataset.room;
- document.getElementById('roomKicker').textContent=r.kicker;document.getElementById('roomTitle').textContent=r.title;document.getElementById('roomText').textContent=r.text;
- [1,2].forEach((n,i)=>{const im=document.getElementById('roomImg'+n),cap=document.getElementById('roomCap'+n);im.src=r.imgs[i][0];im.alt=r.imgs[i][1]+' — מיכאל שמידט';cap.textContent=r.imgs[i][1]});
-}));
-const focusView=document.getElementById('focusView');
-const focusImg=document.getElementById('focusImg');
-const focusTitle=document.getElementById('focusTitle');
-const focusMeta=document.getElementById('focusMeta');
-const closeFocus=()=>{focusView.classList.remove('open');focusView.setAttribute('aria-hidden','true');document.body.style.overflow=''};
-document.querySelectorAll('.clickableArt').forEach(img=>img.addEventListener('click',()=>{
- focusImg.src=img.currentSrc||img.src;
- focusImg.alt=img.alt;
- focusTitle.textContent=img.dataset.title||img.alt.replace(' — מיכאל שמידט','');
- focusMeta.textContent=img.dataset.meta||'צילום מאת מיכאל שמידט';
- focusView.classList.add('open');focusView.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';
- const wallImg=document.getElementById('wallImg'); if(wallImg){wallImg.src=img.currentSrc||img.src;wallImg.alt=img.alt}
- document.querySelectorAll('.studioPane').forEach(p=>p.classList.remove('active'));
- document.querySelectorAll('.focusAction').forEach(b=>b.classList.remove('active'));
- const sp=document.getElementById('splitPreview'); if(sp){sp.hidden=true;sp.querySelectorAll('div').forEach(d=>d.style.backgroundImage='url("'+(img.currentSrc||img.src)+'")')}
-}));
-document.getElementById('focusClose').addEventListener('click',closeFocus);
-focusView.addEventListener('click',e=>{if(e.target===focusView)closeFocus()});
-addEventListener('keydown',e=>{if(e.key==='Escape')closeFocus()});
-document.querySelectorAll('.focusAction[data-pane]').forEach(btn=>btn.addEventListener('click',()=>{
- document.querySelectorAll('.focusAction[data-pane]').forEach(b=>b.classList.remove('active'));
- document.querySelectorAll('.studioPane').forEach(p=>p.classList.remove('active'));
- btn.classList.add('active');
- const pane=document.getElementById('pane-'+btn.dataset.pane); if(pane)pane.classList.add('active');
-}));
-const finishCopy={
- "Fine Art Paper":"מראה שקט ומדויק. לפני מכירה אמיתית נוודא ספק, חומר, מידות ועלויות.",
- "Canvas":"תחושה חומרית ורכה יותר. מוצג כהמחשה בלבד עד אימות ספק.",
- "Acrylic":"עומק וברק מודגש יותר. מתאים רק לעבודות שבהן זה משרת את הצילום.",
- "Framed":"מסגור שמכבד את היחס המקורי של היצירה, בלי חיתוך כפוי."
-};
-document.querySelectorAll('.optionChip[data-wall]').forEach(btn=>btn.addEventListener('click',()=>{
- document.querySelectorAll('.optionChip[data-wall]').forEach(b=>b.classList.remove('active'));btn.classList.add('active');
- const wall=document.getElementById('wallScene');
- const bg={warm:"linear-gradient(#e9e1d6 0 72%,#cfc6ba 72%)",stone:"linear-gradient(#e7e5e0 0 72%,#c9c6c0 72%)",dark:"linear-gradient(#2b2b28 0 72%,#1d1e1c 72%)"};
- wall.style.background=bg[btn.dataset.wall];
-}));
-document.querySelectorAll('.optionChip[data-finish]').forEach(btn=>btn.addEventListener('click',()=>{
- document.querySelectorAll('.optionChip[data-finish]').forEach(b=>b.classList.remove('active'));btn.classList.add('active');
- document.getElementById('finishTitle').textContent=btn.dataset.finish;
- document.getElementById('finishText').textContent=finishCopy[btn.dataset.finish]||'';
-}));
-document.querySelectorAll('.optionChip[data-layout]').forEach(btn=>btn.addEventListener('click',()=>{
- document.querySelectorAll('.optionChip[data-layout]').forEach(b=>b.classList.remove('active'));btn.classList.add('active');
- document.getElementById('splitPreview').hidden=btn.dataset.layout!=='triptych';
-}));
-const hdr=document.querySelector('header');
-addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>40),{passive:true});
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});
-document.querySelectorAll('.reveal').forEach(x=>io.observe(x));
+const artData=[["שקט על החוף","מים · מרחב · נשימה","https://static.wixstatic.com/media/646cc5_89146b682a6841cebafd7c15612097b0~mv2.jpg"],["זרימה נצחית — הבניאס","מים · אבן · פרא","https://static.wixstatic.com/media/646cc5_77aee53dafce44a79228f628f2214001~mv2.jpg"],["קציר זהוב","אדמה · אור · זהב","https://static.wixstatic.com/media/646cc5_d760ae6b12e043d583db3d869bfd99b1~mv2.jpg"],["אחרי השלג","חורף · שקט · מרחב","https://static.wixstatic.com/media/646cc5_cc7e282b3d6b4d22a645a41418dafbc8~mv2.jpg"],["אור מעל הגליל","אור · שמיים · צפון","https://static.wixstatic.com/media/646cc5_6ea0eb41950b4c72a0161970d48a8de8~mv2.jpg"],["שמש ישראלית","פריחה · טבע קרוב","https://static.wixstatic.com/media/646cc5_5d35b0b4b24b4090a5adeca5749d9fb2~mv2.jpg"],["פנורמה","ארץ · מרחב","https://static.wixstatic.com/media/646cc5_d6d0f230cdda4c47869322295a281cb0~mv2.jpg"],["גמלא","גולן · מצוק · שמיים","https://static.wixstatic.com/media/646cc5_6717da33d03b4f8f9c69a46ddfe5fcdc~mv2.jpg"],["החרמון במלוא הדרו","חרמון · חורף","https://static.wixstatic.com/media/646cc5_42650bd93c1c4a5699df4235ae768449~mv2.jpg"],["סיפור סוסים","בעלי חיים · טבע","https://static.wixstatic.com/media/646cc5_9a6c1be42b934a519139db93c2d77a86~mv2.jpg"],["בית החלומות","לפלנד · חורף · מסע","https://static.wixstatic.com/media/646cc5_382bf681899b4b83a82d7ac7768c385a~mv2.jpg"],["שעת הזהב בכנרת","כנרת · אור · ערב","https://static.wixstatic.com/media/646cc5_6850bf4b38eb49859244e7c88123bd90~mv2.jpg"],["הכנרת מאירה","כנרת · אור · מים","https://static.wixstatic.com/media/646cc5_e25510d84656404e95e14ca951fc023c~mv2.jpg"],["קשת ברמה","גולן · חורף · קשת","https://static.wixstatic.com/media/646cc5_d256fadd40a04d5a8cf3beeba7848936~mv2.jpg"],["שם הרי גולן","גולן · ארץ · אור","https://static.wixstatic.com/media/646cc5_d720bd48e7e7459c80f35ec11b000e2c~mv2.jpg"],["ירושלים של זהב","ירושלים · אבן · אור","https://static.wixstatic.com/media/646cc5_e4c74d9f48944acdba34278e2724fca5~mv2.jpg"],["שלכת בגולן","גולן · שלכת · צבע","https://static.wixstatic.com/media/646cc5_9d7f11f6ffc246c9b3fe3dc3110613ed~mv2.jpg"]];
+let saved=new Set(JSON.parse(localStorage.getItem('msSaved')||'[]'));
+function renderSaved(){document.getElementById('savedCount').textContent=saved.size;document.getElementById('savedDockCount').textContent=saved.size;document.getElementById('savedDock').classList.toggle('show',saved.size>0);document.querySelectorAll('[data-save]').forEach(b=>{const i=Number(b.dataset.save);b.classList.toggle('saved',saved.has(i));b.textContent=saved.has(i)?'♥':'♡'})}
+document.querySelectorAll('[data-save]').forEach(b=>b.addEventListener('click',e=>{e.stopPropagation();const i=Number(b.dataset.save);saved.has(i)?saved.delete(i):saved.add(i);localStorage.setItem('msSaved',JSON.stringify([...saved]));renderSaved()}));renderSaved();
+
+const focus=document.getElementById('focusView'),fi=document.getElementById('focusImg'),ft=document.getElementById('focusTitle'),fm=document.getElementById('focusMeta');
+function openArt(img){fi.src=img.currentSrc||img.src;fi.alt=img.alt;ft.textContent=img.dataset.title||img.alt.replace(' — מיכאל שמידט','');fm.textContent=img.dataset.meta||'צילום מאת מיכאל שמידט';focus.classList.add('open');focus.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';document.querySelectorAll('.studioPane').forEach(p=>p.classList.remove('active'))}
+function closeArt(){focus.classList.remove('open');focus.setAttribute('aria-hidden','true');document.body.style.overflow=''}
+document.querySelectorAll('.clickableArt').forEach(img=>img.addEventListener('click',()=>openArt(img)));document.getElementById('focusClose').addEventListener('click',closeArt);addEventListener('keydown',e=>{if(e.key==='Escape')closeArt()});
+document.querySelectorAll('.focusAction').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.studioPane').forEach(p=>p.classList.remove('active'));document.getElementById('pane-'+b.dataset.pane).classList.add('active')}));
+
+const rooms={warm:"linear-gradient(#e7e0d5 0 72%,#cfc5b7 72%)",stone:"linear-gradient(#e8e6e1 0 72%,#c9c5bd 72%)",dark:"linear-gradient(#2b2b28 0 72%,#1d1e1c 72%)",hotel:"linear-gradient(#ded5c8 0 72%,#a99b88 72%)"};
+document.querySelectorAll('.roomBtn').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.roomBtn').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.getElementById('roomScene').style.background=rooms[b.dataset.room]}));
+
+const toolData={wall:["Visualizer לחלל","הלקוח פותח יצירה, בוחר חלל, יחס וגימור ורואה אותה לפני החלטה. כל שינוי הוא שכבת המחשה; המקור לא נחתך.",["יצירה","חלל","מידה / חומר","פנייה"]],collector:["Collector / שמירה והשוואה","הכלי שכבר התחיל כאן עם הלב הופך ל-shortlist אישי: שומרים, משווים 2–4 עבודות, עוברים לקיר ואז מבקשים Private View.",["שמירה","השוואה","קיר","Private View"]],interiors:["Interiors / מלונות","במקום למכור תמונה אחת, מציעים חבילות מאוצרות של 6, 12 או 30 עבודות לפי חלל, צבע ואווירה.",["חלל","אוצרות","הדמיה","הצעה"]],license:["Licensing","לכל עבודה יהיה מסלול פנייה לפי שימוש: מערכת, ספר, מלון, קמפיין או תוכן — בלי לחשוף Master.",["עבודה","שימוש","היקף","פנייה"]],story:["Stories + Music","עבודה יכולה לפתוח שכבה של סיפור, טקסט או קטע מוזיקלי. לא כל עבודה צריכה הכול; רק איפה שיש קשר אמיתי.",["צילום","רגע","מילה","מוזיקה"]],book:["ספר אמן","הכיוון הגדול: “לעצור את הרגע” — צילום, טקסט ו-QR למוזיקה באותו גוף עבודה.",["צילום","טקסט","QR","מהדורה"]]};
+document.querySelectorAll('.toolBtn').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.toolBtn').forEach(x=>x.classList.remove('active'));b.classList.add('active');const d=toolData[b.dataset.tool];document.getElementById('toolTitle').textContent=d[0];document.getElementById('toolText').textContent=d[1];document.getElementById('toolFlow').innerHTML=d[2].map((x,i)=>'<div class="toolStep"><small>0'+(i+1)+'</small>'+x+'</div>').join('')}));
+
+let motionOn=false,shift=0,startX=null;const rail=document.getElementById('gyroRail'),vp=document.getElementById('gyroViewport');
+function setShift(v){shift=Math.max(-260,Math.min(100,v));rail.style.setProperty('--shift',shift)}
+document.getElementById('gyroBtn').addEventListener('click',async()=>{motionOn=true;if(typeof DeviceOrientationEvent!=='undefined'&&typeof DeviceOrientationEvent.requestPermission==='function'){try{await DeviceOrientationEvent.requestPermission()}catch(e){}}document.getElementById('gyroBtn').textContent='תנועה פעילה · אפשר גם לגרור'});
+addEventListener('deviceorientation',e=>{if(motionOn&&typeof e.gamma==='number')setShift(-80-e.gamma*3)},{passive:true});
+vp.addEventListener('pointerdown',e=>{startX=e.clientX;vp.setPointerCapture(e.pointerId)});vp.addEventListener('pointermove',e=>{if(startX!==null){setShift(shift+(e.clientX-startX));startX=e.clientX}});vp.addEventListener('pointerup',()=>startX=null);
 </script>
-</body>
-</html>
+</body></html>
